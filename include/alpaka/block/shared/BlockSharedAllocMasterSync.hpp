@@ -94,9 +94,11 @@ namespace alpaka
                 //!
                 //#############################################################################
                 template<
-                    typename T>
+                    typename T,
+                    std::size_t TuniqueId>
                 struct AllocVar<
                     T,
+                    TuniqueId,
                     BlockSharedAllocMasterSync>
                 {
                     //-----------------------------------------------------------------------------
@@ -129,10 +131,12 @@ namespace alpaka
                 //#############################################################################
                 template<
                     typename T,
-                    std::size_t TnumElements>
+                    std::size_t TnumElements,
+                    std::size_t TuniqueId>
                 struct AllocArr<
                     T,
                     TnumElements,
+                    TuniqueId,
                     BlockSharedAllocMasterSync>
                 {
                     static_assert(
