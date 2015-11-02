@@ -1,6 +1,6 @@
 /**
 * \file
-* Copyright 2015 Benjamin Worpitz
+* Copyright 2015 Benjamin Worpitz, Rene Widera
 *
 * This file is part of alpaka.
 *
@@ -32,9 +32,9 @@ namespace alpaka
         namespace detail
         {
             //#############################################################################
-            // Based on the code from Filip Roséen at http://b.atch.se/posts/constexpr-counter/
+            // Based on the code from Filip Roseen at http://b.atch.se/posts/constexpr-counter/
             //#############################################################################
-            /*template<
+            template<
                 std::size_t N>
             struct flag;
 
@@ -43,7 +43,7 @@ namespace alpaka
             //-----------------------------------------------------------------------------
             template<
                 std::size_t N>
-            constexpr int adl_flag(flag<N>);*/
+            constexpr int adl_flag(flag<N>);
 
             //#############################################################################
             //
@@ -73,13 +73,13 @@ namespace alpaka
                 static constexpr std::size_t value = N;
             };
 
-#ifdef BOOST_COMP_MSVC
+#if (BOOST_COMP_MSVC || __CUDACC__)
             //-----------------------------------------------------------------------------
             //! The matcher.
             //-----------------------------------------------------------------------------
             template<
                 std::size_t N,
-                class = char[noexcept(adl_flag(flag<N>{})) ? +1u : -1u]>
+                class = char[noexcept(adl_flag(flag<N>{})) ? +1 : -1]>
             auto constexpr reader(std::size_t, flag<N>)
             -> std::size_t
             {
@@ -121,7 +121,7 @@ namespace alpaka
                 return 0u;
             }
 
-#ifdef BOOST_COMP_MSVC
+#if (BOOST_COMP_MSVC || __CUDACC__)
             //-----------------------------------------------------------------------------
             //! \return An unique compile time ID.
             //-----------------------------------------------------------------------------

@@ -82,7 +82,8 @@ namespace alpaka
             ALPAKA_NO_HOST_ACC_WARNING
             template<
                 typename T,
-                typename TBlockSharedAlloc>
+                typename TBlockSharedAlloc,
+                std::size_t TuniqueId = core::detail::uniqueId()>
             ALPAKA_FN_HOST_ACC auto allocVar(
                 TBlockSharedAlloc const & blockSharedAlloc)
             -> T &
@@ -90,7 +91,7 @@ namespace alpaka
                 return
                     traits::AllocVar<
                         T,
-                        core::detail::uniqueId(),
+                        TuniqueId,
                         TBlockSharedAlloc>
                     ::allocVar(
                         blockSharedAlloc);
@@ -108,7 +109,8 @@ namespace alpaka
             template<
                 typename T,
                 std::size_t TnumElements,
-                typename TBlockSharedAlloc>
+                typename TBlockSharedAlloc,
+                std::size_t TuniqueId = core::detail::uniqueId()>
             ALPAKA_FN_HOST_ACC auto allocArr(
                 TBlockSharedAlloc const & blockSharedAlloc)
             -> T *
@@ -121,7 +123,7 @@ namespace alpaka
                     traits::AllocArr<
                         T,
                         TnumElements,
-                        core::detail::uniqueId(),
+                        TuniqueId,
                         TBlockSharedAlloc>
                     ::allocArr(
                         blockSharedAlloc);
