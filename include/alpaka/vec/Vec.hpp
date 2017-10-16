@@ -23,6 +23,7 @@
 #include <alpaka/meta/Fold.hpp>
 #include <alpaka/meta/Functional.hpp>
 #include <alpaka/meta/IntegerSequence.hpp>
+#include <alpaka/meta/Metafunctions.hpp>
 #include <alpaka/core/Unused.hpp>
 
 #include <algorithm>
@@ -129,10 +130,9 @@ namespace alpaka
                 m_data{static_cast<TVal>(0u)}
             {}
 
-
             //-----------------------------------------------------------------------------
             //! Value constructor.
-            //! This constructor is only available if the number of parameters matches the vector idx.
+            //! This constructor is only available if the number of parameters matches the vector extent.
             ALPAKA_NO_HOST_ACC_WARNING
             template<
                 typename TArg0,
@@ -141,8 +141,18 @@ namespace alpaka
                     // There have to be dim arguments.
                     (sizeof...(TArgs)+1 == TDim::value)
                     &&
-                    (std::is_same<TVal, std::decay_t<TArg0>>::value)
-                    >>
+                    // They all have to have type TVal
+                    meta::Conjunction<
+                        std::is_same<
+                            typename std::decay<TArg0>::type,
+                            TVal
+                        >,
+                        std::is_same<
+                            typename std::decay<TArgs>::type,
+                            TVal
+                        >...
+                    >::value
+                >>
             ALPAKA_FN_HOST_ACC Vec(
                 TArg0 && arg0,
                 TArgs && ... args) :
