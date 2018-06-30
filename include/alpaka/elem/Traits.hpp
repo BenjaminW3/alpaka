@@ -39,6 +39,10 @@ namespace alpaka
                 typename TView,
                 typename TSfinae = void>
             struct ElemType;
+
+            template<
+                typename T>
+            struct ElemType<const T> : ElemType<T> {};
         }
 
         //#############################################################################

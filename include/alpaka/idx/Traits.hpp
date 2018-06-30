@@ -39,6 +39,10 @@ namespace alpaka
                 typename T,
                 typename TSfinae = void>
             struct IdxType;
+
+            template<
+                typename T>
+            struct IdxType<const T> : IdxType<T> {};
         }
 
         template<

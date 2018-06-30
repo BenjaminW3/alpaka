@@ -44,6 +44,10 @@ namespace alpaka
                 typename TSfinae = void>
             struct PltfType;
 
+            template<
+                typename T>
+            struct PltfType<const T> : PltfType<T> {};
+
             //#############################################################################
             //! The device count get trait.
             template<

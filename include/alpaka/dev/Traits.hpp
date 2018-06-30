@@ -42,6 +42,10 @@ namespace alpaka
                 typename TSfinae = void>
             struct DevType;
 
+            template<
+                typename T>
+            struct DevType<const T> : DevType<T> {};
+
             //#############################################################################
             //! The device get trait.
             template<

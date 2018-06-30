@@ -37,6 +37,10 @@ namespace alpaka
                 typename T,
                 typename TSfinae = void>
             struct DimType;
+
+            template<
+                typename T>
+            struct DimType<const T> : DimType<T> {};
         }
 
         //#############################################################################

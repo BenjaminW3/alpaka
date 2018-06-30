@@ -42,6 +42,10 @@ namespace alpaka
                 typename TSfinae = void>
             struct EventType;
 
+            template<
+                typename T>
+            struct EventType<const T> : EventType<T> {};
+
             //#############################################################################
             //! The event tester trait.
             template<
