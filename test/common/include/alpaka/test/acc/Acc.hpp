@@ -51,6 +51,17 @@ namespace alpaka
             //! The detail namespace is used to separate implementation details from user accessible code.
             namespace detail
             {
+#if defined(ALPAKA_ACC_CPU_B_SEQ_T_COROUTINES_ENABLED)
+                template<
+                    typename TDim,
+                    typename TIdx>
+                using AccCpuCoroutinesIfAvailableElseInt = alpaka::acc::AccCpuCoroutines<TDim, TIdx>;
+#else
+                template<
+                    typename TDim,
+                    typename TIdx>
+                using AccCpuCoroutinesIfAvailableElseInt = int;
+#endif
 #if defined(ALPAKA_ACC_CPU_B_SEQ_T_SEQ_ENABLED)
                 template<
                     typename TDim,
@@ -161,6 +172,7 @@ namespace alpaka
                     typename TIdx>
                 using EnabledAccsElseInt =
                     std::tuple<
+                        AccCpuCoroutinesIfAvailableElseInt<TDim, TIdx>,
                         AccCpuSerialIfAvailableElseInt<TDim, TIdx>,
                         AccCpuThreadsIfAvailableElseInt<TDim, TIdx>,
                         AccCpuFibersIfAvailableElseInt<TDim, TIdx>,

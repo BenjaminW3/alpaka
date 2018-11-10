@@ -1,6 +1,6 @@
 /**
 * \file
-* Copyright 2014-2016 Benjamin Worpitz, Rene Widera
+* Copyright 2018 Benjamin Worpitz
 *
 * This file is part of alpaka.
 *
@@ -21,19 +21,19 @@
 
 #pragma once
 
-#ifdef ALPAKA_ACC_CPU_B_SEQ_T_FIBERS_ENABLED
+#ifdef ALPAKA_ACC_CPU_B_SEQ_T_COROUTINES_ENABLED
 
 // Base classes.
 #include <alpaka/workdiv/WorkDivMembers.hpp>
 #include <alpaka/idx/gb/IdxGbRef.hpp>
-#include <alpaka/idx/bt/IdxBtRefFiberIdMap.hpp>
+#include <alpaka/idx/bt/IdxBtZero.hpp>
 #include <alpaka/atomic/AtomicNoOp.hpp>
 #include <alpaka/atomic/AtomicStdLibLock.hpp>
 #include <alpaka/atomic/AtomicHierarchy.hpp>
 #include <alpaka/math/MathStdLib.hpp>
 #include <alpaka/block/shared/dyn/BlockSharedMemDynBoostAlignedAlloc.hpp>
-#include <alpaka/block/shared/st/BlockSharedMemStMasterSync.hpp>
-#include <alpaka/block/sync/BlockSyncBarrierFiber.hpp>
+#include <alpaka/block/shared/st/BlockSharedMemStNoSync.hpp>
+#include <alpaka/block/sync/BlockSyncNoOp.hpp>
 #include <alpaka/rand/RandStdLib.hpp>
 #include <alpaka/time/TimeStdLib.hpp>
 
@@ -46,7 +46,6 @@
 
 // Implementation details.
 #include <alpaka/core/ClipCast.hpp>
-#include <alpaka/core/Fibers.hpp>
 #include <alpaka/core/Unused.hpp>
 #include <alpaka/dev/DevCpu.hpp>
 
@@ -63,33 +62,28 @@ namespace alpaka
             typename TIdx,
             typename TKernelFnObj,
             typename... TArgs>
-        class ExecCpuFibers;
+        class ExecCpuCoroutines;
     }
     namespace acc
     {
         //#############################################################################
-        //! The CPU fibers accelerator.
-        //!
-        //! This accelerator allows parallel kernel execution on a CPU device.
-        //! It uses boost::fibers to implement the cooperative parallelism.
-        //! By using fibers the shared memory can reside in the closest memory/cache available.
-        //! Furthermore there is no false sharing between neighboring threads as it is the case in real multi-threading.
+        //! The CPU coroutines accelerator.
         template<
             typename TDim,
             typename TIdx>
-        class AccCpuFibers final :
+        class AccCpuCoroutines final :
             public workdiv::WorkDivMembers<TDim, TIdx>,
             public idx::gb::IdxGbRef<TDim, TIdx>,
-            public idx::bt::IdxBtRefFiberIdMap<TDim, TIdx>,
+            public idx::bt::IdxBtZero<TDim, TIdx>,
             public atomic::AtomicHierarchy<
                 atomic::AtomicStdLibLock<16>, // grid atomics
-                atomic::AtomicStdLibLock<16>, // block atomics
+                atomic::AtomicNoOp,        // block atomics
                 atomic::AtomicNoOp         // thread atomics
             >,
             public math::MathStdLib,
             public block::shared::dyn::BlockSharedMemDynBoostAlignedAlloc,
-            public block::shared::st::BlockSharedMemStMasterSync,
-            public block::sync::BlockSyncBarrierFiber<TIdx>,
+            public block::shared::st::BlockSharedMemStNoSync,
+            public block::sync::BlockSyncNoOp,
             public rand::RandStdLib,
             public time::TimeStdLib
         {
@@ -100,30 +94,27 @@ namespace alpaka
                 typename TIdx2,
                 typename TKernelFnObj,
                 typename... TArgs>
-            friend class ::alpaka::exec::ExecCpuFibers;
+            friend class ::alpaka::exec::ExecCpuCoroutines;
 
         private:
             //-----------------------------------------------------------------------------
             template<
                 typename TWorkDiv>
-            ALPAKA_FN_HOST AccCpuFibers(
+            ALPAKA_FN_HOST AccCpuCoroutines(
                 TWorkDiv const & workDiv,
                 TIdx const & blockSharedMemDynSizeBytes) :
                     workdiv::WorkDivMembers<TDim, TIdx>(workDiv),
                     idx::gb::IdxGbRef<TDim, TIdx>(m_gridBlockIdx),
-                    idx::bt::IdxBtRefFiberIdMap<TDim, TIdx>(m_fibersToIndices),
+                    idx::bt::IdxBtZero<TDim, TIdx>(),
                     atomic::AtomicHierarchy<
                         atomic::AtomicStdLibLock<16>, // atomics between grids
-                        atomic::AtomicStdLibLock<16>, // atomics between blocks
+                        atomic::AtomicNoOp,        // atomics between blocks
                         atomic::AtomicNoOp         // atomics between threads
                     >(),
                     math::MathStdLib(),
                     block::shared::dyn::BlockSharedMemDynBoostAlignedAlloc(static_cast<std::size_t>(blockSharedMemDynSizeBytes)),
-                    block::shared::st::BlockSharedMemStMasterSync(
-                        [this](){block::sync::syncBlockThreads(*this);},
-                        [this](){return (m_masterFiberId == boost::this_fiber::get_id());}),
-                    block::sync::BlockSyncBarrierFiber<TIdx>(
-                        workdiv::getWorkDiv<Block, Threads>(workDiv).prod()),
+                    block::shared::st::BlockSharedMemStNoSync(),
+                    block::sync::BlockSyncNoOp(),
                     rand::RandStdLib(),
                     time::TimeStdLib(),
                     m_gridBlockIdx(vec::Vec<TDim, TIdx>::zeros())
@@ -131,23 +122,18 @@ namespace alpaka
 
         public:
             //-----------------------------------------------------------------------------
-            ALPAKA_FN_HOST AccCpuFibers(AccCpuFibers const &) = delete;
+            ALPAKA_FN_HOST AccCpuCoroutines(AccCpuCoroutines const &) = delete;
             //-----------------------------------------------------------------------------
-            ALPAKA_FN_HOST AccCpuFibers(AccCpuFibers &&) = delete;
+            ALPAKA_FN_HOST AccCpuCoroutines(AccCpuCoroutines &&) = delete;
             //-----------------------------------------------------------------------------
-            ALPAKA_FN_HOST auto operator=(AccCpuFibers const &) -> AccCpuFibers & = delete;
+            ALPAKA_FN_HOST auto operator=(AccCpuCoroutines const &) -> AccCpuCoroutines & = delete;
             //-----------------------------------------------------------------------------
-            ALPAKA_FN_HOST auto operator=(AccCpuFibers &&) -> AccCpuFibers & = delete;
+            ALPAKA_FN_HOST auto operator=(AccCpuCoroutines &&) -> AccCpuCoroutines & = delete;
             //-----------------------------------------------------------------------------
-            /*virtual*/ ~AccCpuFibers() = default;
+            /*virtual*/ ~AccCpuCoroutines() = default;
 
         private:
-            // getIdx
-            typename idx::bt::IdxBtRefFiberIdMap<TDim, TIdx>::FiberIdToIdxMap mutable m_fibersToIndices;  //!< The mapping of fibers id's to indices.
             vec::Vec<TDim, TIdx> mutable m_gridBlockIdx;                    //!< The index of the currently executed block.
-
-            // allocBlockSharedArr
-            boost::fibers::fiber::id mutable m_masterFiberId;           //!< The id of the master fiber.
         };
     }
 
@@ -161,9 +147,9 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct AccType<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
-                using type = acc::AccCpuFibers<TDim, TIdx>;
+                using type = acc::AccCpuCoroutines<TDim, TIdx>;
             };
             //#############################################################################
             //! The CPU fibers accelerator device properties get trait specialization.
@@ -171,7 +157,7 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct GetAccDevProps<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 //-----------------------------------------------------------------------------
                 ALPAKA_FN_HOST static auto getAccDevProps(
@@ -180,10 +166,11 @@ namespace alpaka
                 {
                     alpaka::ignore_unused(dev);
 
+                    // FIXME: 3/128
 #ifdef ALPAKA_CI
-                    auto const blockThreadCountMax(static_cast<TIdx>(3));
+                    auto const blockThreadCountMax(static_cast<TIdx>(1));
 #else
-                    auto const blockThreadCountMax(static_cast<TIdx>(4));  // \TODO: What is the maximum? Just set a reasonable value?
+                    auto const blockThreadCountMax(static_cast<TIdx>(1));  // \TODO: What is the maximum? Just set a reasonable value?
 #endif
                     return {
                         // m_multiProcessorCount
@@ -208,13 +195,13 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct GetAccName<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 //-----------------------------------------------------------------------------
                 ALPAKA_FN_HOST static auto getAccName()
                 -> std::string
                 {
-                    return "AccCpuFibers<" + std::to_string(TDim::value) + "," + typeid(TIdx).name() + ">";
+                    return "AccCpuCoroutines<" + std::to_string(TDim::value) + "," + typeid(TIdx).name() + ">";
                 }
             };
         }
@@ -229,7 +216,7 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct DevType<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 using type = dev::DevCpu;
             };
@@ -245,7 +232,7 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct DimType<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 using type = TDim;
             };
@@ -264,7 +251,7 @@ namespace alpaka
                 typename TKernelFnObj,
                 typename... TArgs>
             struct CreateTaskExec<
-                acc::AccCpuFibers<TDim, TIdx>,
+                acc::AccCpuCoroutines<TDim, TIdx>,
                 TWorkDiv,
                 TKernelFnObj,
                 TArgs...>
@@ -275,7 +262,7 @@ namespace alpaka
                     TKernelFnObj const & kernelFnObj,
                     TArgs const & ... args)
 #ifdef BOOST_NO_CXX14_RETURN_TYPE_DEDUCTION
-                -> exec::ExecCpuFibers<
+                -> exec::ExecCpuCoroutines<
                     TDim,
                     TIdx,
                     TKernelFnObj,
@@ -283,7 +270,7 @@ namespace alpaka
 #endif
                 {
                     return
-                        exec::ExecCpuFibers<
+                        exec::ExecCpuCoroutines<
                             TDim,
                             TIdx,
                             TKernelFnObj,
@@ -305,7 +292,7 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct PltfType<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 using type = pltf::PltfCpu;
             };
@@ -321,7 +308,7 @@ namespace alpaka
                 typename TDim,
                 typename TIdx>
             struct IdxType<
-                acc::AccCpuFibers<TDim, TIdx>>
+                acc::AccCpuCoroutines<TDim, TIdx>>
             {
                 using type = TIdx;
             };

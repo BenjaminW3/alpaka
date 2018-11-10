@@ -57,6 +57,81 @@
     #undef BOOST_NO_CXX11_VARIADIC_TEMPLATES
 #endif
 
+
+#ifdef ALPAKA_ACC_CPU_B_SEQ_T_COROUTINES_ENABLED
+#include <experimental/coroutine>
+
+namespace alpaka
+{
+    struct coreturn {
+        struct promise_type {
+            friend struct coreturn;
+            promise_type() {
+                //std::cout << "Promise created" << std::endl;
+            }
+            ~promise_type() {
+                //std::cout << "Promise died" << std::endl;
+            }
+            [[ noreturn ]] void unhandled_exception() {
+                std::exit(1);
+            }
+            auto get_return_object() {
+                //std::cout << "Send back a coreturn" << std::endl;
+                return coreturn{handle_type::from_promise(*this)};
+            }
+            auto initial_suspend() {
+                //std::cout << "Started the coroutine, don't stop now!" << std::endl;
+                return std::experimental::suspend_never{};
+                //lazy: return std::experimental::suspend_always{};
+            }
+            auto final_suspend() {
+                //std::cout << "Finished the coro" << std::endl;
+                return std::experimental::suspend_always{};
+            }
+            void return_void() {}
+        };
+
+        friend struct promise_type;
+        using handle_type = std::experimental::coroutine_handle<promise_type>;
+
+        coreturn(handle_type h)
+        : coro(h) {
+            //std::cout << "Created a coreturn wrapper object" << std::endl;
+        }
+        coreturn(const coreturn &) = delete;
+        coreturn(coreturn &&s)
+        : coro(s.coro) {
+            //std::cout << "Coreturn wrapper moved" << std::endl;
+            s.coro = nullptr;
+        }
+        ~coreturn() {
+            //std::cout << "Coreturn wrapper gone" << std::endl;
+            if(coro){
+                coro.destroy();
+            }
+        }
+        coreturn &operator = (const coreturn &) = delete;
+        coreturn &operator = (coreturn &&s) {
+            coro = s.coro;
+            s.coro = nullptr;
+            return *this;
+        }
+        void wait() {
+            //std::cout << "We got asked to finish..." << std::endl;
+            if(!this->coro.done()){
+                this->coro.resume();
+            }
+            return;
+        }
+    protected:
+        handle_type coro;
+    };
+}
+#define ALPAKA_FN_RET alpaka::coreturn
+#else
+#define ALPAKA_FN_RET void
+#endif
+
 //-----------------------------------------------------------------------------
 //! All functions that can be used on an accelerator have to be attributed with ALPAKA_FN_ACC or ALPAKA_FN_HOST_ACC.
 //!

@@ -51,7 +51,7 @@ public:
         TElem const * const B,
         TElem * const C,
         TIdx const & numElements) const
-    -> void
+    -> ALPAKA_FN_RET
     {
         static_assert(
             alpaka::dim::Dim<TAcc>::value == 1,

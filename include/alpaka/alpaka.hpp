@@ -1,6 +1,6 @@
 /**
 * \file
-* Copyright 2014-2016 Benjamin Worpitz, Erik Zenker
+* Copyright 2014-2018 Benjamin Worpitz, Erik Zenker
 *
 * This file is part of alpaka.
 *
@@ -30,6 +30,7 @@
 #include <alpaka/version.hpp>
 //-----------------------------------------------------------------------------
 // acc
+#include <alpaka/acc/AccCpuCoroutines.hpp>
 #include <alpaka/acc/AccCpuSerial.hpp>
 #include <alpaka/acc/AccCpuThreads.hpp>
 #include <alpaka/acc/AccCpuFibers.hpp>
@@ -114,6 +115,7 @@
 #include <alpaka/event/Traits.hpp>
 //-----------------------------------------------------------------------------
 // exec
+#include <alpaka/exec/ExecCpuCoroutines.hpp>
 #include <alpaka/exec/ExecCpuSerial.hpp>
 #include <alpaka/exec/ExecCpuThreads.hpp>
 #include <alpaka/exec/ExecCpuFibers.hpp>
