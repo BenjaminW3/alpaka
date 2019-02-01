@@ -50,6 +50,7 @@ fi
 
 if [ "$TRAVIS_OS_NAME" = "osx" ]
 then
+    brew install libomp
     brew install tbb
 fi
 
