@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['vec',['Vec',['../classalpaka_1_1Vec.html#a5e1c2b0240f0b6a93ae63abc6988ba2b',1,'alpaka::Vec::Vec(TArg0 &amp;&amp;arg0, TArgs &amp;&amp;...args)'],['../classalpaka_1_1Vec.html#acb9d14d6d44e6cbe98d52a4c90ccf395',1,'alpaka::Vec::Vec(Vec const &amp;)=default'],['../classalpaka_1_1Vec.html#af6e10b1f8f066d77486c8748f032ebe6',1,'alpaka::Vec::Vec(Vec &amp;&amp;)=default']]],
-  ['view',['View',['../classalpaka_1_1mem_1_1detail_1_1View.html#a99c6e7bdfb0400e78ad547bff8540559',1,'alpaka::mem::detail::View::View(TBuf const &amp;buf)'],['../classalpaka_1_1mem_1_1detail_1_1View.html#af29fc1747e2b27d561c4a11c23db7a3d',1,'alpaka::mem::detail::View::View(TBuf &amp;buf)'],['../classalpaka_1_1mem_1_1detail_1_1View.html#a881343d73a5fbb2fc426d6cf5470b045',1,'alpaka::mem::detail::View::View(TBuf const &amp;buf, TExtents const &amp;extentsElements, TOffsets const &amp;relativeOffsetsElements=TOffsets())'],['../classalpaka_1_1mem_1_1detail_1_1View.html#a81cbc8d2f817b273b0460b988b6f1c54',1,'alpaka::mem::detail::View::View(TBuf &amp;buf, TExtents const &amp;extentsElements, TOffsets const &amp;relativeOffsetsElements=TOffsets())']]]
-];
