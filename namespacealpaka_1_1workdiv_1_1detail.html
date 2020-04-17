@@ -90,10 +90,10 @@ $(document).ready(function(){initNavTree('namespacealpaka_1_1workdiv_1_1detail.h
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1workdiv_1_1detail.html#a2d98f18def6ddef92c7261e0c4b65bc9">allDivisorsLessOrEqual</a> (T const &amp;val, T const &amp;maxDivisor) -&gt; std::set&lt; T &gt;</td></tr>
 <tr class="separator:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1workdiv_1_1detail.html#aa93e0159a259aafa2a66e17cb33cc125">nextDivisorLowerOrEqual</a> (T const &amp;maxDivisor, T const &amp;dividend) -&gt; T</td></tr>
 <tr class="separator:aa93e0159a259aafa2a66e17cb33cc125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -104,7 +104,7 @@ Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </div>
+template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto alpaka::workdiv::detail::allDivisorsLessOrEqual </td>
@@ -135,7 +135,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of all divisors less then or equal to the given maximum. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00079">79</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00080">80</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -145,7 +145,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </div>
+template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto alpaka::workdiv::detail::nextDivisorLowerOrEqual </td>
@@ -176,7 +176,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The biggest number that satisfies the following conditions: 1) dividend/ret==0 2) ret&lt;=maxDivisor </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00054">54</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00055">55</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +186,7 @@ template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacealpaka.html">alpaka</a></li><li class="navelem"><a class="el" href="namespacealpaka_1_1workdiv.html">workdiv</a></li><li class="navelem"><a class="el" href="namespacealpaka_1_1workdiv_1_1detail.html">detail</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:07 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:54 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

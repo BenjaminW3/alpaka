@@ -104,11 +104,13 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1workdiv_1_1WorkDivCudaBuiltIn.html">WorkDivCudaBuiltIn</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The GPU CUDA accelerator work division.  <a href="classalpaka_1_1workdiv_1_1WorkDivCudaBuiltIn.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structalpaka_1_1workdiv_1_1ConceptWorkDiv.html">ConceptWorkDiv</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1workdiv_1_1WorkDivMembers.html">WorkDivMembers</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A basic class holding the work division as grid block extent, block thread and thread element extent.  <a href="classalpaka_1_1workdiv_1_1WorkDivMembers.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1workdiv_1_1WorkDivUniformCudaHipBuiltIn.html">WorkDivUniformCudaHipBuiltIn</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The GPU CUDA/HIP accelerator work division.  <a href="classalpaka_1_1workdiv_1_1WorkDivUniformCudaHipBuiltIn.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -183,7 +185,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00036">36</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00037">37</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +257,7 @@ template&lt;typename TAcc , typename TGridElemExtent , typename TThreadElemExten
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The work division. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00393">393</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00394">394</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -280,7 +282,7 @@ template&lt;typename TOrigin , typename TUnit , typename TWorkDiv &gt; </div>
 
 <p>Get the extent requested. </p>
 
-<p class="definition">Definition at line <a class="el" href="workdiv_2Traits_8hpp_source.html#l00053">53</a> of file <a class="el" href="workdiv_2Traits_8hpp_source.html">Traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="workdiv_2Traits_8hpp_source.html#l00051">51</a> of file <a class="el" href="workdiv_2Traits_8hpp_source.html">Traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +319,7 @@ template&lt;typename TDim , typename TIdx &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If the accelerator device properties are valid. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00110">110</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00111">111</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -366,7 +368,7 @@ template&lt;typename TDim , typename TIdx , typename TWorkDiv &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If the work division is valid for the given accelerator device properties. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00433">433</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00434">434</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -413,7 +415,7 @@ template&lt;typename TAcc , typename TDev , typename TWorkDiv &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If the work division is valid on this accelerator. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00488">488</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00489">489</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -514,7 +516,7 @@ template&lt;typename TDim , typename TIdx &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00162">162</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="WorkDivHelpers_8hpp_source.html#l00163">163</a> of file <a class="el" href="WorkDivHelpers_8hpp_source.html">WorkDivHelpers.hpp</a>.</p>
 
 </div>
 </div>
@@ -524,7 +526,7 @@ template&lt;typename TDim , typename TIdx &gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacealpaka.html">alpaka</a></li><li class="navelem"><a class="el" href="namespacealpaka_1_1workdiv.html">workdiv</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:07 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:54 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

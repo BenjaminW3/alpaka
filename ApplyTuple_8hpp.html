@@ -90,8 +90,6 @@ $(document).ready(function(){initNavTree('ApplyTuple_8hpp.html','');});
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="Common_8hpp_source.html">alpaka/core/Common.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="Unused_8hpp_source.html">alpaka/core/Unused.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="IntegerSequence_8hpp_source.html">alpaka/meta/IntegerSequence.hpp</a>&gt;</code><br />
-<code>#include &lt;boost/config.hpp&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
@@ -113,9 +111,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a56741b54d82b32923cb3f4a7cf83c8ad"><td class="memTemplParams" colspan="2">template&lt;class F , class Tuple &gt; </td></tr>
 <tr class="memitem:a56741b54d82b32923cb3f4a7cf83c8ad"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1meta.html#a56741b54d82b32923cb3f4a7cf83c8ad">alpaka::meta::apply</a> (F &amp;&amp;f, Tuple &amp;&amp;t)</td></tr>
 <tr class="separator:a56741b54d82b32923cb3f4a7cf83c8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad568d28c2baec0b805b576e42235f3be"><td class="memTemplParams" colspan="2">template&lt;class F , class Tuple , std::size_t... I&gt; </td></tr>
-<tr class="memitem:ad568d28c2baec0b805b576e42235f3be"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1meta_1_1detail.html#ad568d28c2baec0b805b576e42235f3be">alpaka::meta::detail::apply_impl</a> (F &amp;&amp;f, Tuple &amp;&amp;t, meta::IndexSequence&lt; I... &gt;)</td></tr>
-<tr class="separator:ad568d28c2baec0b805b576e42235f3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebce11a4b79094b270c92c989ab45661"><td class="memTemplParams" colspan="2">template&lt;class F , class Tuple , std::size_t... I&gt; </td></tr>
+<tr class="memitem:aebce11a4b79094b270c92c989ab45661"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1meta_1_1detail.html#aebce11a4b79094b270c92c989ab45661">alpaka::meta::detail::apply_impl</a> (F &amp;&amp;f, Tuple &amp;&amp;t, std::index_sequence&lt; I... &gt;)</td></tr>
+<tr class="separator:aebce11a4b79094b270c92c989ab45661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d10365751af9a2d8dba526c4532196e"><td class="memTemplParams" colspan="2">template&lt;class F , class... ArgTypes&gt; </td></tr>
 <tr class="memitem:a0d10365751af9a2d8dba526c4532196e"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1meta.html#a0d10365751af9a2d8dba526c4532196e">alpaka::meta::invoke</a> (F &amp;&amp;f, ArgTypes &amp;&amp;... args)</td></tr>
 <tr class="separator:a0d10365751af9a2d8dba526c4532196e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,7 +139,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f712bff28b6ff1ff870a222047d04675.html">alpaka</a></li><li class="navelem"><a class="el" href="dir_9b06e2d5421d26ecb89f5fc8cf901459.html">meta</a></li><li class="navelem"><a class="el" href="ApplyTuple_8hpp.html">ApplyTuple.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:05 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:52 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('ConcurrentExecPool_8hpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="Common_8hpp_source.html">alpaka/core/Common.hpp</a>&gt;</code><br />
-<code>#include &lt;boost/config.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="BoostPredef_8hpp_source.html">alpaka/core/BoostPredef.hpp</a>&gt;</code><br />
 <code>#include &lt;queue&gt;</code><br />
 <code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('ConcurrentExecPool_8hpp.html','');});
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="ConcurrentExecPool_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -139,7 +140,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9cf37165a70d8ddde06149e81cb971ba"><td class="memTemplParams" colspan="2">template&lt;typename TFnObj0 , typename TFnObj1 , typename  = typename std::enable_if&lt;!std::is_same&lt;void, decltype(std::declval&lt;TFnObj0&gt;()())&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a9cf37165a70d8ddde06149e81cb971ba"><td class="memTemplParams" colspan="2">template&lt;typename TFnObj0 , typename TFnObj1 , typename  = std::enable_if_t&lt;!std::is_same&lt;void, decltype(std::declval&lt;TFnObj0&gt;()())&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a9cf37165a70d8ddde06149e81cb971ba"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1core_1_1detail.html#a9cf37165a70d8ddde06149e81cb971ba">alpaka::core::detail::invokeBothReturnFirst</a> (TFnObj0 &amp;&amp;fn0, TFnObj1 &amp;&amp;fn1)</td></tr>
 <tr class="separator:a9cf37165a70d8ddde06149e81cb971ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -149,7 +150,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f712bff28b6ff1ff870a222047d04675.html">alpaka</a></li><li class="navelem"><a class="el" href="dir_cfa240ccb1fbe815dea98e3774bff08a.html">core</a></li><li class="navelem"><a class="el" href="ConcurrentExecPool_8hpp.html">ConcurrentExecPool.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:05 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:52 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

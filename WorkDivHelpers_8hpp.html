@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('WorkDivHelpers_8hpp.html','');});
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="WorkDivHelpers_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -129,7 +130,7 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1workdiv_1_1detail.html#a2d98f18def6ddef92c7261e0c4b65bc9">alpaka::workdiv::detail::allDivisorsLessOrEqual</a> (T const &amp;val, T const &amp;maxDivisor) -&gt; std::set&lt; T &gt;</td></tr>
 <tr class="separator:a2d98f18def6ddef92c7261e0c4b65bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab10c7cdb423dd50a56e20f973b328165"><td class="memTemplParams" colspan="2">template&lt;typename TAcc , typename TGridElemExtent , typename TThreadElemExtent , typename TDev &gt; </td></tr>
@@ -144,7 +145,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ad8a3f6a58910f715e46a8348da258e9f"><td class="memTemplParams" colspan="2">template&lt;typename TAcc , typename TDev , typename TWorkDiv &gt; </td></tr>
 <tr class="memitem:ad8a3f6a58910f715e46a8348da258e9f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1workdiv.html#ad8a3f6a58910f715e46a8348da258e9f">alpaka::workdiv::isValidWorkDiv</a> (TDev const &amp;dev, TWorkDiv const &amp;workDiv) -&gt; bool</td></tr>
 <tr class="separator:ad8a3f6a58910f715e46a8348da258e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = typename std::enable_if&lt;std::is_integral&lt;T&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplParams" colspan="2">template&lt;typename T , typename  = std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aa93e0159a259aafa2a66e17cb33cc125"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacealpaka_1_1workdiv_1_1detail.html#aa93e0159a259aafa2a66e17cb33cc125">alpaka::workdiv::detail::nextDivisorLowerOrEqual</a> (T const &amp;maxDivisor, T const &amp;dividend) -&gt; T</td></tr>
 <tr class="separator:aa93e0159a259aafa2a66e17cb33cc125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab52eee3cbb455f3799257d30917b7e3a"><td class="memTemplParams" colspan="2">template&lt;typename TDim , typename TIdx &gt; </td></tr>
@@ -158,7 +159,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f712bff28b6ff1ff870a222047d04675.html">alpaka</a></li><li class="navelem"><a class="el" href="dir_43271bcfd261ba185a35bd5280ac7ea9.html">workdiv</a></li><li class="navelem"><a class="el" href="WorkDivHelpers_8hpp.html">WorkDivHelpers.hpp</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:05 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:52 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

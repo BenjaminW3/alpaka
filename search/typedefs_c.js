@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['randstdlib',['RandStdLib',['../namespacealpaka_1_1rand.html#a93da771a5926ecbf71428adf07417ac8',1,'alpaka::rand']]],
-  ['result_5ftype',['result_type',['../structalpaka_1_1rand_1_1generator_1_1cpu_1_1TinyMTengine.html#af19ede1d56f7bf83a1972ec5b5a021a0',1,'alpaka::rand::generator::cpu::TinyMTengine']]]
+  ['queue',['Queue',['../namespacealpaka_1_1queue.html#afe86b25f088e5aacbd303d2ad24d8303',1,'alpaka::queue']]],
+  ['queuecpublocking',['QueueCpuBlocking',['../namespacealpaka_1_1queue.html#a1ac52e323c537c159da66c0359ec29b8',1,'alpaka::queue']]],
+  ['queuecpunonblocking',['QueueCpuNonBlocking',['../namespacealpaka_1_1queue.html#a0711babacf9839b4da4430c1482f3901',1,'alpaka::queue']]],
+  ['queuecudartblocking',['QueueCudaRtBlocking',['../namespacealpaka_1_1queue.html#a97eebab3e3880b3b1cd5e24599648a84',1,'alpaka::queue']]],
+  ['queuecudartnonblocking',['QueueCudaRtNonBlocking',['../namespacealpaka_1_1queue.html#a62678d66a0e8e30f4f3c1cdb91c7b372',1,'alpaka::queue']]]
 ];

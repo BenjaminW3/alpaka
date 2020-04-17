@@ -1,8 +1,8 @@
 var namespacealpaka_1_1event =
 [
-    [ "cpu", "namespacealpaka_1_1event_1_1cpu.html", "namespacealpaka_1_1event_1_1cpu" ],
-    [ "cuda", "namespacealpaka_1_1event_1_1cuda.html", "namespacealpaka_1_1event_1_1cuda" ],
+    [ "generic", "namespacealpaka_1_1event_1_1generic.html", "namespacealpaka_1_1event_1_1generic" ],
     [ "traits", "namespacealpaka_1_1event_1_1traits.html", "namespacealpaka_1_1event_1_1traits" ],
-    [ "EventCpu", "classalpaka_1_1event_1_1EventCpu.html", "classalpaka_1_1event_1_1EventCpu" ],
-    [ "EventCudaRt", "classalpaka_1_1event_1_1EventCudaRt.html", "classalpaka_1_1event_1_1EventCudaRt" ]
+    [ "uniform_cuda_hip", "namespacealpaka_1_1event_1_1uniform__cuda__hip.html", "namespacealpaka_1_1event_1_1uniform__cuda__hip" ],
+    [ "EventGenericThreads", "classalpaka_1_1event_1_1EventGenericThreads.html", "classalpaka_1_1event_1_1EventGenericThreads" ],
+    [ "EventUniformCudaHipRt", "classalpaka_1_1event_1_1EventUniformCudaHipRt.html", "classalpaka_1_1event_1_1EventUniformCudaHipRt" ]
 ];

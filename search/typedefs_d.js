@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['srcsize',['SrcSize',['../structalpaka_1_1mem_1_1view_1_1cpu_1_1detail_1_1TaskCopyCpuBase.html#a8fa28e5787731a80ba64c96b0f497b46',1,'alpaka::mem::view::cpu::detail::TaskCopyCpuBase']]]
+  ['randstdlib',['RandStdLib',['../namespacealpaka_1_1rand.html#a93da771a5926ecbf71428adf07417ac8',1,'alpaka::rand']]],
+  ['result_5ftype',['result_type',['../structalpaka_1_1rand_1_1generator_1_1cpu_1_1TinyMTengine.html#af19ede1d56f7bf83a1972ec5b5a021a0',1,'alpaka::rand::generator::cpu::TinyMTengine']]]
 ];

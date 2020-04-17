@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['makeindexsequence',['MakeIndexSequence',['../namespacealpaka_1_1meta.html#a080d643f295091052783052719c17286',1,'alpaka::meta']]],
-  ['makeindexsequenceoffset',['MakeIndexSequenceOffset',['../namespacealpaka_1_1meta.html#ad4b56857b910af2649dcca32df5688e1',1,'alpaka::meta']]],
-  ['makeintegersequence',['MakeIntegerSequence',['../namespacealpaka_1_1meta.html#a2758a24eb26ed019a2d2b370b1be3a53',1,'alpaka::meta']]],
-  ['makeintegersequenceoffset',['MakeIntegerSequenceOffset',['../namespacealpaka_1_1meta.html#a249172d48948ec565d27f606964b4728',1,'alpaka::meta']]]
+  ['makeintegersequenceoffset',['MakeIntegerSequenceOffset',['../namespacealpaka_1_1meta.html#a98ee617da8c80fac8878adf0b026a1cb',1,'alpaka::meta']]],
+  ['memcpykind',['MemcpyKind',['../structalpaka_1_1mem_1_1view_1_1uniform__cuda__hip_1_1detail_1_1TaskCopyUniformCudaHip_3_01dim_1_2efdf378c7cab3dc2b6b093e79813a5f.html#a380080ef7fddae13e8f03298342e9041',1,'alpaka::mem::view::uniform_cuda_hip::detail::TaskCopyUniformCudaHip&lt; dim::DimInt&lt; 1 &gt;, TViewDst, TViewSrc, TExtent &gt;::MemcpyKind()'],['../structalpaka_1_1mem_1_1view_1_1uniform__cuda__hip_1_1detail_1_1TaskCopyUniformCudaHip_3_01dim_1_9d73e3b202845db0f67633a9869cf0e0.html#a07c9408e7ee91a3aecd74960b405dc0a',1,'alpaka::mem::view::uniform_cuda_hip::detail::TaskCopyUniformCudaHip&lt; dim::DimInt&lt; 2 &gt;, TViewDst, TViewSrc, TExtent &gt;::MemcpyKind()'],['../structalpaka_1_1mem_1_1view_1_1uniform__cuda__hip_1_1detail_1_1TaskCopyUniformCudaHip_3_01dim_1_cecb734fdfa9ea1ab6e3c525a7013f29.html#ad2c90508f2250354ac06f8dc2b9938b0',1,'alpaka::mem::view::uniform_cuda_hip::detail::TaskCopyUniformCudaHip&lt; dim::DimInt&lt; 3 &gt;, TViewDst, TViewSrc, TExtent &gt;::MemcpyKind()']]]
 ];

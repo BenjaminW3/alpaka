@@ -107,13 +107,13 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6c78b3ff222f2c557143b6a51b35ec1f"><td class="memTemplParams" colspan="2">template&lt;bool B = (TDim::value == 0u), typename  = typename std::enable_if&lt;B&gt;::type&gt; </td></tr>
+<tr class="memitem:a6c78b3ff222f2c557143b6a51b35ec1f"><td class="memTemplParams" colspan="2">template&lt;bool B = (TDim::value == 0u), typename  = std::enable_if_t&lt;B&gt;&gt; </td></tr>
 <tr class="memitem:a6c78b3ff222f2c557143b6a51b35ec1f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a6c78b3ff222f2c557143b6a51b35ec1f">Vec</a> ()</td></tr>
 <tr class="separator:a6c78b3ff222f2c557143b6a51b35ec1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34c1234f73b08527680cf9afa65c9029"><td class="memTemplParams" colspan="2">template&lt;typename TArg0 , typename... TArgs, typename  = typename std::enable_if&lt;                                        (sizeof...(TArgs)+1 == TDim::value)                    &amp;&amp;                    (std::is_same&lt;TVal, typename std::decay&lt;TArg0&gt;::type&gt;::value)                    &gt;::type&gt; </td></tr>
-<tr class="memitem:a34c1234f73b08527680cf9afa65c9029"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a34c1234f73b08527680cf9afa65c9029">Vec</a> (TArg0 &amp;&amp;arg0, TArgs &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a34c1234f73b08527680cf9afa65c9029"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value constructor. This constructor is only available if the number of parameters matches the vector idx.  <a href="#a34c1234f73b08527680cf9afa65c9029">More...</a><br /></td></tr>
-<tr class="separator:a34c1234f73b08527680cf9afa65c9029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade733b7f3c95429519d6157af321b31e"><td class="memTemplParams" colspan="2">template&lt;typename TArg0 , typename... TArgs&gt; </td></tr>
+<tr class="memitem:ade733b7f3c95429519d6157af321b31e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ade733b7f3c95429519d6157af321b31e">Vec</a> (TArg0 &amp;&amp;arg0, TArgs &amp;&amp;... args)</td></tr>
+<tr class="memdesc:ade733b7f3c95429519d6157af321b31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value constructor. This constructor is only available if the number of parameters matches the vector idx.  <a href="#ade733b7f3c95429519d6157af321b31e">More...</a><br /></td></tr>
+<tr class="separator:ade733b7f3c95429519d6157af321b31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4d13037e655928ddf0253de407d8fb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ac4d13037e655928ddf0253de407d8fb0">Vec</a> (<a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a> const &amp;)=default</td></tr>
 <tr class="separator:ac4d13037e655928ddf0253de407d8fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35a68fe7d406eef7478f09856c65b3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ad35a68fe7d406eef7478f09856c65b3f">Vec</a> (<a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a> &amp;&amp;)=default</td></tr>
@@ -123,9 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adbb54501c74960e299cd6055989922e5"><td class="memTemplParams" colspan="2">template&lt;typename TFnObj &gt; </td></tr>
 <tr class="memitem:adbb54501c74960e299cd6055989922e5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#adbb54501c74960e299cd6055989922e5">foldrAll</a> (TFnObj const &amp;f) const</td></tr>
 <tr class="separator:adbb54501c74960e299cd6055989922e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad47abffca5089f7b6148481a53aac56b"><td class="memTemplParams" colspan="2">template&lt;typename TFnObj , std::size_t... TIndices&gt; </td></tr>
-<tr class="memitem:ad47abffca5089f7b6148481a53aac56b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ad47abffca5089f7b6148481a53aac56b">foldrByIndices</a> (TFnObj const &amp;f, <a class="el" href="structalpaka_1_1meta_1_1IntegerSequence.html">meta::IntegerSequence</a>&lt; std::size_t, TIndices... &gt; const &amp;indices) const</td></tr>
-<tr class="separator:ad47abffca5089f7b6148481a53aac56b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e43c3d1ea038c44d9fa15a12f994fcc"><td class="memTemplParams" colspan="2">template&lt;typename TFnObj , std::size_t... TIndices&gt; </td></tr>
+<tr class="memitem:a6e43c3d1ea038c44d9fa15a12f994fcc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a6e43c3d1ea038c44d9fa15a12f994fcc">foldrByIndices</a> (TFnObj const &amp;f, std::integer_sequence&lt; std::size_t, TIndices... &gt; const &amp;indices) const</td></tr>
+<tr class="separator:a6e43c3d1ea038c44d9fa15a12f994fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a666aabcfb25ba1e49ce7a198762f9cd6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a666aabcfb25ba1e49ce7a198762f9cd6">max</a> () const -&gt; TVal</td></tr>
 <tr class="separator:a666aabcfb25ba1e49ce7a198762f9cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a094a6fc62bf799d59f9deba56cf52574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#a30cf38ce8c63908b355f69eb893da575">ALPAKA_FN_HOST</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a094a6fc62bf799d59f9deba56cf52574">maxElem</a> () const -&gt; typename TDim::value_type</td></tr>
@@ -142,11 +142,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeb25e417e185e877a95c8b91e8e65121"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed14f42361c2c6b3f1bf1faa9e6250f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#aed14f42361c2c6b3f1bf1faa9e6250f3">operator==</a> (<a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a> const &amp;rhs) const -&gt; bool</td></tr>
 <tr class="separator:aed14f42361c2c6b3f1bf1faa9e6250f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35f990bb007f261698cb4eb2937b4c7c"><td class="memTemplParams" colspan="2">template&lt;typename TIdx , typename  = typename std::enable_if&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:a35f990bb007f261698cb4eb2937b4c7c"><td class="memTemplParams" colspan="2">template&lt;typename TIdx , typename  = std::enable_if_t&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:a35f990bb007f261698cb4eb2937b4c7c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#a35f990bb007f261698cb4eb2937b4c7c">operator[]</a> (TIdx const iIdx) -&gt; TVal &amp;</td></tr>
 <tr class="memdesc:a35f990bb007f261698cb4eb2937b4c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value reference accessor at the given non-unsigned integer index.  <a href="#a35f990bb007f261698cb4eb2937b4c7c">More...</a><br /></td></tr>
 <tr class="separator:a35f990bb007f261698cb4eb2937b4c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef6bab6ce3d61d9a262dbbad25900ba8"><td class="memTemplParams" colspan="2">template&lt;typename TIdx , typename  = typename std::enable_if&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:aef6bab6ce3d61d9a262dbbad25900ba8"><td class="memTemplParams" colspan="2">template&lt;typename TIdx , typename  = std::enable_if_t&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;&gt; </td></tr>
 <tr class="memitem:aef6bab6ce3d61d9a262dbbad25900ba8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#aef6bab6ce3d61d9a262dbbad25900ba8">operator[]</a> (TIdx const iIdx) const -&gt; TVal</td></tr>
 <tr class="memdesc:aef6bab6ce3d61d9a262dbbad25900ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value accessor at the given non-unsigned integer index.  <a href="#aef6bab6ce3d61d9a262dbbad25900ba8">More...</a><br /></td></tr>
 <tr class="separator:aef6bab6ce3d61d9a262dbbad25900ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,18 +160,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afc559d9c8cecae85e8be7bcd4e5e19cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#afc559d9c8cecae85e8be7bcd4e5e19cf">all</a> (TVal const &amp;val) -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt; TDim, TVal &gt;</td></tr>
 <tr class="memdesc:afc559d9c8cecae85e8be7bcd4e5e19cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single value constructor.  <a href="#afc559d9c8cecae85e8be7bcd4e5e19cf">More...</a><br /></td></tr>
 <tr class="separator:afc559d9c8cecae85e8be7bcd4e5e19cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad267a460b072d7c9475dde573ba00bb1"><td class="memTemplParams" colspan="2">template&lt;template&lt; std::size_t &gt; class TTFnObj, typename... TArgs&gt; </td></tr>
-<tr class="memitem:ad267a460b072d7c9475dde573ba00bb1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ad267a460b072d7c9475dde573ba00bb1">createVecFromIndexedFn</a> (TArgs &amp;&amp;... args) -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt; TDim, TVal &gt;</td></tr>
-<tr class="memdesc:ad267a460b072d7c9475dde573ba00bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creator using func&lt;idx&gt;(args...) to initialize all values of the vector. The idx is in the range [0, TDim].  <a href="#ad267a460b072d7c9475dde573ba00bb1">More...</a><br /></td></tr>
-<tr class="separator:ad267a460b072d7c9475dde573ba00bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc8aedcd5c34cc40e7beced090118c01"><td class="memTemplParams" colspan="2">template&lt;template&lt; std::size_t &gt; class TTFnObj, typename... TArgs, typename TIdxSize , TIdxSize... TIndices&gt; </td></tr>
-<tr class="memitem:adc8aedcd5c34cc40e7beced090118c01"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#adc8aedcd5c34cc40e7beced090118c01">createVecFromIndexedFnArbitrary</a> (<a class="el" href="structalpaka_1_1meta_1_1IntegerSequence.html">meta::IntegerSequence</a>&lt; TIdxSize, TIndices... &gt; const &amp;indices, TArgs &amp;&amp;... args) -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt; TDim, TVal &gt;</td></tr>
-<tr class="memdesc:adc8aedcd5c34cc40e7beced090118c01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creator using func&lt;idx&gt;(args...) to initialize all values of the vector.  <a href="#adc8aedcd5c34cc40e7beced090118c01">More...</a><br /></td></tr>
-<tr class="separator:adc8aedcd5c34cc40e7beced090118c01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5264aa46b12daeed4876294925fe70b"><td class="memTemplParams" colspan="2">template&lt;template&lt; std::size_t &gt; class TTFnObj, typename TIdxOffset , typename... TArgs&gt; </td></tr>
-<tr class="memitem:ad5264aa46b12daeed4876294925fe70b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#ad5264aa46b12daeed4876294925fe70b">createVecFromIndexedFnOffset</a> (TArgs &amp;&amp;... args) -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt; TDim, TVal &gt;</td></tr>
-<tr class="memdesc:ad5264aa46b12daeed4876294925fe70b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creator using func&lt;idx&gt;(args...) to initialize all values of the vector. The idx is in the range [TIdxOffset, TIdxOffset + TDim].  <a href="#ad5264aa46b12daeed4876294925fe70b">More...</a><br /></td></tr>
-<tr class="separator:ad5264aa46b12daeed4876294925fe70b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf43a8fc9155a835b9a5afd73dfbdba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classalpaka_1_1vec_1_1Vec.html#acf43a8fc9155a835b9a5afd73dfbdba9">ones</a> () -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt; TDim, TVal &gt;</td></tr>
 <tr class="memdesc:acf43a8fc9155a835b9a5afd73dfbdba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">One value constructor.  <a href="#acf43a8fc9155a835b9a5afd73dfbdba9">More...</a><br /></td></tr>
 <tr class="separator:acf43a8fc9155a835b9a5afd73dfbdba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,7 +178,7 @@ class alpaka::vec::Vec&lt; TDim, TVal &gt;</h3>
 
 <p>A n-dimensional vector. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00048">48</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00041">41</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2b6cfd8a8d8fe334d9e281a6e29bff3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b6cfd8a8d8fe334d9e281a6e29bff3a">&#9670;&nbsp;</a></span>Dim</h2>
@@ -206,7 +194,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00140">140</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00112">112</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +212,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00142">142</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00114">114</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +225,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
 template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
-template&lt;bool B = (TDim::value == 0u), typename  = typename std::enable_if&lt;B&gt;::type&gt; </div>
+template&lt;bool B = (TDim::value == 0u), typename  = std::enable_if_t&lt;B&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -256,19 +244,19 @@ template&lt;bool B = (TDim::value == 0u), typename  = typename std::enable_if&lt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00156">156</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00128">128</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a34c1234f73b08527680cf9afa65c9029"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34c1234f73b08527680cf9afa65c9029">&#9670;&nbsp;</a></span>Vec() <span class="overload">[2/4]</span></h2>
+<a id="ade733b7f3c95429519d6157af321b31e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade733b7f3c95429519d6157af321b31e">&#9670;&nbsp;</a></span>Vec() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
-template&lt;typename TArg0 , typename... TArgs, typename  = typename std::enable_if&lt;                                        (sizeof...(TArgs)+1 == TDim::value)                    &amp;&amp;                    (std::is_same&lt;TVal, typename std::decay&lt;TArg0&gt;::type&gt;::value)                    &gt;::type&gt; </div>
+template&lt;typename TArg0 , typename... TArgs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -300,7 +288,7 @@ template&lt;typename TArg0 , typename... TArgs, typename  = typename std::enable
 
 <p>Value constructor. This constructor is only available if the number of parameters matches the vector idx. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00174">174</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00146">146</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -423,122 +411,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00281">281</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad267a460b072d7c9475dde573ba00bb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad267a460b072d7c9475dde573ba00bb1">&#9670;&nbsp;</a></span>createVecFromIndexedFn()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TDim, typename TVal&gt; </div>
-<div class="memtemplate">
-template&lt;template&lt; std::size_t &gt; class TTFnObj, typename... TArgs&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto <a class="el" href="classalpaka_1_1vec_1_1Vec.html">alpaka::vec::Vec</a>&lt; TDim, TVal &gt;::createVecFromIndexedFn </td>
-          <td>(</td>
-          <td class="paramtype">TArgs &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt;TDim, TVal&gt;
-            </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creator using func&lt;idx&gt;(args...) to initialize all values of the vector. The idx is in the range [0, TDim]. </p>
-
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00206">206</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
-
-</div>
-</div>
-<a id="adc8aedcd5c34cc40e7beced090118c01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc8aedcd5c34cc40e7beced090118c01">&#9670;&nbsp;</a></span>createVecFromIndexedFnArbitrary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TDim, typename TVal&gt; </div>
-<div class="memtemplate">
-template&lt;template&lt; std::size_t &gt; class TTFnObj, typename... TArgs, typename TIdxSize , TIdxSize... TIndices&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto <a class="el" href="classalpaka_1_1vec_1_1Vec.html">alpaka::vec::Vec</a>&lt; TDim, TVal &gt;::createVecFromIndexedFnArbitrary </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structalpaka_1_1meta_1_1IntegerSequence.html">meta::IntegerSequence</a>&lt; TIdxSize, TIndices... &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>indices</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">TArgs &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt;TDim, TVal&gt;
-            </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creator using func&lt;idx&gt;(args...) to initialize all values of the vector. </p>
-
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00189">189</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ad5264aa46b12daeed4876294925fe70b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5264aa46b12daeed4876294925fe70b">&#9670;&nbsp;</a></span>createVecFromIndexedFnOffset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TDim, typename TVal&gt; </div>
-<div class="memtemplate">
-template&lt;template&lt; std::size_t &gt; class TTFnObj, typename TIdxOffset , typename... TArgs&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="Common_8hpp.html#aa8d02f0c4379afabdb7f4ee2e8f7954c">ALPAKA_NO_HOST_ACC_WARNING</a> static <a class="el" href="Common_8hpp.html#a4a195bd41eac945cee512865b6ef73f3">ALPAKA_FN_HOST_ACC</a> auto <a class="el" href="classalpaka_1_1vec_1_1Vec.html">alpaka::vec::Vec</a>&lt; TDim, TVal &gt;::createVecFromIndexedFnOffset </td>
-          <td>(</td>
-          <td class="paramtype">TArgs &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td> -&gt; <a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a>&lt;TDim, TVal&gt;
-            </td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creator using func&lt;idx&gt;(args...) to initialize all values of the vector. The idx is in the range [TIdxOffset, TIdxOffset + TDim]. </p>
-
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00224">224</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00195">195</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -570,12 +443,12 @@ template&lt;typename TFnObj &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00395">395</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00301">301</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad47abffca5089f7b6148481a53aac56b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad47abffca5089f7b6148481a53aac56b">&#9670;&nbsp;</a></span>foldrByIndices()</h2>
+<a id="a6e43c3d1ea038c44d9fa15a12f994fcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e43c3d1ea038c44d9fa15a12f994fcc">&#9670;&nbsp;</a></span>foldrByIndices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -596,7 +469,7 @@ template&lt;typename TFnObj , std::size_t... TIndices&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structalpaka_1_1meta_1_1IntegerSequence.html">meta::IntegerSequence</a>&lt; std::size_t, TIndices... &gt; const &amp;&#160;</td>
+          <td class="paramtype">std::integer_sequence&lt; std::size_t, TIndices... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>indices</em>&#160;</td>
         </tr>
         <tr>
@@ -612,7 +485,7 @@ template&lt;typename TFnObj , std::size_t... TIndices&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00374">374</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00286">286</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -643,7 +516,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The max of all values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00460">460</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00344">344</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -674,7 +547,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The index of the maximal element. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00484">484</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00364">364</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -705,7 +578,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The min of all values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00448">448</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00336">336</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -736,7 +609,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The index of the minimal element. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00471">471</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00351">351</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -768,7 +641,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 
 <p>One value constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00304">304</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00216">216</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -799,7 +672,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00363">363</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00275">275</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -886,7 +759,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00348">348</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00260">260</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -898,7 +771,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
 template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
-template&lt;typename TIdx , typename  = typename std::enable_if&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;::type&gt; </div>
+template&lt;typename TIdx , typename  = std::enable_if_t&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -922,7 +795,7 @@ template&lt;typename TIdx , typename  = typename std::enable_if&lt;             
 <p>Value reference accessor at the given non-unsigned integer index. </p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the value at the given index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00318">318</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00230">230</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -934,7 +807,7 @@ template&lt;typename TIdx , typename  = typename std::enable_if&lt;             
 <div class="memtemplate">
 template&lt;typename TDim, typename TVal&gt; </div>
 <div class="memtemplate">
-template&lt;typename TIdx , typename  = typename std::enable_if&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;::type&gt; </div>
+template&lt;typename TIdx , typename  = std::enable_if_t&lt;                    std::is_integral&lt;TIdx&gt;::value&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -958,7 +831,7 @@ template&lt;typename TIdx , typename  = typename std::enable_if&lt;             
 <p>Value accessor at the given non-unsigned integer index. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value at the given index. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00336">336</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00248">248</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -989,7 +862,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The product of all values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00421">421</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00317">317</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -1020,7 +893,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The sum of all values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00436">436</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00328">328</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -1052,7 +925,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 
 <p>Zero value constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00296">296</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00208">208</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -1079,7 +952,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00141">141</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Vec_8hpp_source.html#l00113">113</a> of file <a class="el" href="Vec_8hpp_source.html">Vec.hpp</a>.</p>
 
 </div>
 </div>
@@ -1092,7 +965,7 @@ template&lt;typename TDim, typename TVal&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacealpaka.html">alpaka</a></li><li class="navelem"><a class="el" href="namespacealpaka_1_1vec.html">vec</a></li><li class="navelem"><a class="el" href="classalpaka_1_1vec_1_1Vec.html">Vec</a></li>
-    <li class="footer">Generated on Sat Jan 18 2020 14:50:07 for alpaka by
+    <li class="footer">Generated on Fri Apr 17 2020 19:04:54 for alpaka by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
