@@ -87,8 +87,8 @@ then
             CMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -fsanitize-address-use-after-scope"
         fi
 
-        ASAN_OPTIONS="strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1"
-        LSAN_OPTIONS="print_suppressions=1:suppressions=$(pwd)/test/sanitizer_lsan_blacklist.txt"
+        export ASAN_OPTIONS="strict_string_checks=1:detect_stack_use_after_return=1:check_initialization_order=1:strict_init_order=1"
+        export LSAN_OPTIONS="print_suppressions=1:suppressions=$(pwd)/test/sanitizer_lsan_blacklist.txt"
     fi
 
     # TSan - http://clang.llvm.org/docs/ThreadSanitizer.html
