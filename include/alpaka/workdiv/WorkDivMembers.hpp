@@ -24,7 +24,7 @@ namespace alpaka
     template<
         typename TDim,
         typename TIdx>
-    class WorkDivMembers : public concepts::Implements<ConceptWorkDiv, WorkDivMembers<TDim, TIdx>>
+    class WorkDivMembers : public concepts::ImplementsViaBase<ConceptWorkDiv, WorkDivMembers<TDim, TIdx>>
     {
     public:
         //-----------------------------------------------------------------------------

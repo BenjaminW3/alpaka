@@ -26,7 +26,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxGbRef : public concepts::Implements<ConceptIdxGb, IdxGbRef<TDim, TIdx>>
+        class IdxGbRef : public concepts::ImplementsViaBase<ConceptIdxGb, IdxGbRef<TDim, TIdx>>
         {
         public:
             //-----------------------------------------------------------------------------

@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in pow.
-        class PowUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathPow, PowUniformCudaHipBuiltIn>
+        class PowUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathPow, PowUniformCudaHipBuiltIn>
         {
         };
 

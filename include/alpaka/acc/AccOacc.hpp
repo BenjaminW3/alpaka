@@ -84,12 +84,12 @@ namespace alpaka
         public warp::WarpSingleThread,
         // NVHPC calls a builtin in the STL implementation, which fails in OpenACC offload, using fallback
         public IntrinsicFallback,
-        public concepts::Implements<ConceptAcc, AccOacc<TDim, TIdx>>,
-        public concepts::Implements<ConceptWorkDiv, AccOacc<TDim, TIdx>>,
-        public concepts::Implements<ConceptBlockSharedDyn, AccOacc<TDim, TIdx>>,
-        public concepts::Implements<ConceptBlockSharedSt, AccOacc<TDim, TIdx>>,
-        public concepts::Implements<ConceptBlockSync, AccOacc<TDim, TIdx>>,
-        public concepts::Implements<ConceptIdxGb, AccOacc<TDim, TIdx>>
+        public concepts::ImplementsViaBase<ConceptAcc, AccOacc<TDim, TIdx>>,
+        public concepts::ImplementsViaBase<ConceptWorkDiv, AccOacc<TDim, TIdx>>,
+        public concepts::ImplementsViaBase<ConceptBlockSharedDyn, AccOacc<TDim, TIdx>>,
+        public concepts::ImplementsViaBase<ConceptBlockSharedSt, AccOacc<TDim, TIdx>>,
+        public concepts::ImplementsViaBase<ConceptBlockSync, AccOacc<TDim, TIdx>>,
+        public concepts::ImplementsViaBase<ConceptIdxGb, AccOacc<TDim, TIdx>>
     {
         template<
             typename TDim2,

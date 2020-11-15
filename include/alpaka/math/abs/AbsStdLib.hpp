@@ -23,7 +23,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library abs.
-        class AbsStdLib : public concepts::Implements<ConceptMathAbs, AbsStdLib>
+        class AbsStdLib : public concepts::ImplementsViaBase<ConceptMathAbs, AbsStdLib>
         {
         };
 

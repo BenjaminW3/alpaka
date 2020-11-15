@@ -46,13 +46,13 @@ namespace alpaka
             T const & ceil_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathCeil, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathCeil, T>;
             return
                 traits::Ceil<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::ceil(
-                    ceil_ctx,
+                    concepts::getImplementation<ConceptMathCeil>(ceil_ctx),
                     arg);
         }
     }

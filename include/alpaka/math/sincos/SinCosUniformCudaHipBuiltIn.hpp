@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA sincos.
-        class SinCosUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathSinCos, SinCosUniformCudaHipBuiltIn>
+        class SinCosUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathSinCos, SinCosUniformCudaHipBuiltIn>
         {
         };
 

@@ -46,13 +46,13 @@ namespace alpaka
             T const & erf_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathErf, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathErf, T>;
             return
                 traits::Erf<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::erf(
-                    erf_ctx,
+                    concepts::getImplementation<ConceptMathErf>(erf_ctx),
                     arg);
         }
     }

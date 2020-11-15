@@ -45,12 +45,12 @@ namespace alpaka
         TBlockSharedMemDyn const & blockSharedMemDyn)
     -> T *
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptBlockSharedDyn, TBlockSharedMemDyn>;
+        using ImplementationType = concepts::ImplementationType<ConceptBlockSharedDyn, TBlockSharedMemDyn>;
         return
             traits::GetMem<
                 T,
-                ImplementationBase>
+                ImplementationType>
             ::getMem(
-                blockSharedMemDyn);
+                concepts::getImplementation<ConceptBlockSharedDyn>(blockSharedMemDyn));
     }
 }

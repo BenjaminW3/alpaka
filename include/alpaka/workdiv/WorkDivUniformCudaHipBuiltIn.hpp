@@ -41,7 +41,7 @@ namespace alpaka
     template<
         typename TDim,
         typename TIdx>
-    class WorkDivUniformCudaHipBuiltIn : public concepts::Implements<ConceptWorkDiv, WorkDivUniformCudaHipBuiltIn<TDim, TIdx>>
+    class WorkDivUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptWorkDiv, WorkDivUniformCudaHipBuiltIn<TDim, TIdx>>
     {
     public:
         //-----------------------------------------------------------------------------

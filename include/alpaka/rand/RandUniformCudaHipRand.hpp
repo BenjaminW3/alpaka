@@ -51,7 +51,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA/HIP rand implementation.
-        class RandUniformCudaHipRand : public concepts::Implements<ConceptRand, RandUniformCudaHipRand>
+        class RandUniformCudaHipRand : public concepts::ImplementsViaBase<ConceptRand, RandUniformCudaHipRand>
         {
         };
 

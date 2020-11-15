@@ -19,7 +19,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The single-threaded warp to emulate it on CPUs.
-        class WarpSingleThread : public concepts::Implements<ConceptWarp, WarpSingleThread>
+        class WarpSingleThread : public concepts::ImplementsViaBase<ConceptWarp, WarpSingleThread>
         {
         public:
             //-----------------------------------------------------------------------------

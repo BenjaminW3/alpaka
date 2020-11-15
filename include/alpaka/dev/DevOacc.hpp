@@ -118,8 +118,8 @@ namespace alpaka
     //#############################################################################
     //! The OpenACC device handle.
     class DevOacc :
-        public concepts::Implements<ConceptCurrentThreadWaitFor, DevOacc>,
-        public concepts::Implements<ConceptDev, DevOacc>
+        public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, DevOacc>,
+        public concepts::ImplementsViaBase<ConceptDev, DevOacc>
     {
         friend struct traits::GetDevByIdx<PltfOacc>;
 

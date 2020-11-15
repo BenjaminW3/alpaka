@@ -42,11 +42,11 @@ namespace alpaka
         TTime const & time)
     -> std::uint64_t
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptTime, TTime>;
+        using ImplementationType = concepts::ImplementationType<ConceptTime, TTime>;
         return
             traits::Clock<
-                ImplementationBase>
+                ImplementationType>
             ::clock(
-                time);
+                concepts::getImplementation<ConceptTime>(time));
     }
 }

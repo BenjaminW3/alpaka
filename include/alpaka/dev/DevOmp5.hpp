@@ -112,8 +112,8 @@ namespace alpaka
     //#############################################################################
     //! The Omp5 device handle.
     class DevOmp5 :
-        public concepts::Implements<ConceptCurrentThreadWaitFor, DevOmp5>,
-        public concepts::Implements<ConceptDev, DevOmp5>
+        public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, DevOmp5>,
+        public concepts::ImplementsViaBase<ConceptDev, DevOmp5>
     {
         friend struct traits::GetDevByIdx<PltfOmp5>;
 

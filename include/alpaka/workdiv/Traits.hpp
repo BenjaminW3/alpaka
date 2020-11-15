@@ -48,14 +48,14 @@ namespace alpaka
         TWorkDiv const & workDiv)
     -> Vec<Dim<TWorkDiv>, Idx<TWorkDiv>>
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptWorkDiv, TWorkDiv>;
+        using ImplementationType = concepts::ImplementationType<ConceptWorkDiv, TWorkDiv>;
         return
             traits::GetWorkDiv<
-                ImplementationBase,
+                ImplementationType,
                 TOrigin,
                 TUnit>
             ::getWorkDiv(
-                workDiv);
+                concepts::getImplementation<ConceptWorkDiv>(workDiv));
     }
 
     namespace traits

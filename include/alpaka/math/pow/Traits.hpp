@@ -55,14 +55,14 @@ namespace alpaka
             TBase const & base,
             TExp const & exp)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathPow, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathPow, T>;
             return
                 traits::Pow<
-                    ImplementationBase,
+                    ImplementationType,
                     TBase,
                     TExp>
                 ::pow(
-                    pow_ctx,
+                    concepts::getImplementation<ConceptMathPow>(pow_ctx),
                     base,
                     exp);
         }

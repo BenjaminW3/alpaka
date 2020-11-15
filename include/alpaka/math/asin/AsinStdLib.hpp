@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library asin.
-        class AsinStdLib : public concepts::Implements<ConceptMathAsin, AsinStdLib>
+        class AsinStdLib : public concepts::ImplementsViaBase<ConceptMathAsin, AsinStdLib>
         {
         };
 

@@ -38,7 +38,7 @@ namespace alpaka
                 //! The CPU device event implementation.
                 template<
                     typename TDev>
-                class EventGenericThreadsImpl final : public concepts::Implements<ConceptCurrentThreadWaitFor, EventGenericThreadsImpl<TDev>>
+                class EventGenericThreadsImpl final : public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, EventGenericThreadsImpl<TDev>>
                 {
                 public:
                     //-----------------------------------------------------------------------------
@@ -98,8 +98,8 @@ namespace alpaka
         template<
             typename TDev>
         class EventGenericThreads final
-            : public concepts::Implements<ConceptCurrentThreadWaitFor, EventGenericThreads<TDev>>
-            , public concepts::Implements<ConceptGetDev, EventGenericThreads<TDev>>
+            : public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, EventGenericThreads<TDev>>
+            , public concepts::ImplementsViaBase<ConceptGetDev, EventGenericThreads<TDev>>
         {
         public:
             //-----------------------------------------------------------------------------

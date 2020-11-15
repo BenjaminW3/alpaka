@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library floor.
-        class FloorStdLib : public concepts::Implements<ConceptMathFloor, FloorStdLib>
+        class FloorStdLib : public concepts::ImplementsViaBase<ConceptMathFloor, FloorStdLib>
         {
         };
 

@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         // ! The CUDA built in log.
-        class LogUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathLog, LogUniformCudaHipBuiltIn>
+        class LogUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathLog, LogUniformCudaHipBuiltIn>
         {
         };
 

@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in erf.
-        class ErfUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathErf, ErfUniformCudaHipBuiltIn>
+        class ErfUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathErf, ErfUniformCudaHipBuiltIn>
         {
         };
 

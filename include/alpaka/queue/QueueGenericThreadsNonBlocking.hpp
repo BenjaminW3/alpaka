@@ -100,9 +100,9 @@ namespace alpaka
     template<
         typename TDev>
     class QueueGenericThreadsNonBlocking final
-        : public concepts::Implements<ConceptCurrentThreadWaitFor, QueueGenericThreadsNonBlocking<TDev>>
-        , public concepts::Implements<ConceptQueue, QueueGenericThreadsNonBlocking<TDev>>
-        , public concepts::Implements<ConceptGetDev, QueueGenericThreadsNonBlocking<TDev>>
+        : public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, QueueGenericThreadsNonBlocking<TDev>>
+        , public concepts::ImplementsViaBase<ConceptQueue, QueueGenericThreadsNonBlocking<TDev>>
+        , public concepts::ImplementsViaBase<ConceptGetDev, QueueGenericThreadsNonBlocking<TDev>>
     {
     public:
         //-----------------------------------------------------------------------------

@@ -50,7 +50,7 @@ namespace alpaka
         typename TIdx>
     class AccGpuHipRt final :
         public AccGpuUniformCudaHipRt<TDim,TIdx>,
-        public concepts::Implements<ConceptUniformCudaHip, AccGpuUniformCudaHipRt<TDim, TIdx>>
+        public concepts::ImplementsViaBase<ConceptUniformCudaHip, AccGpuUniformCudaHipRt<TDim, TIdx>>
     {
         static_assert(sizeof(TIdx) >= sizeof(int), "Index type is not supported, consider using int or a larger type.");
     public:

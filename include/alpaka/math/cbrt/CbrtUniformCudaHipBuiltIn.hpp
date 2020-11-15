@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in cbrt.
-        class CbrtUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathCbrt, CbrtUniformCudaHipBuiltIn>
+        class CbrtUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathCbrt, CbrtUniformCudaHipBuiltIn>
         {
         };
 

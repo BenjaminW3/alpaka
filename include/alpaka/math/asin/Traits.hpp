@@ -49,13 +49,13 @@ namespace alpaka
             T const & asin_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathAsin, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathAsin, T>;
             return
                 traits::Asin<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::asin(
-                    asin_ctx,
+                    concepts::getImplementation<ConceptMathAsin>(asin_ctx),
                     arg);
         }
     }

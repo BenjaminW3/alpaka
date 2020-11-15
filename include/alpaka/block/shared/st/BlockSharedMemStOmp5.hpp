@@ -28,7 +28,7 @@ namespace alpaka
     //! The OpenMP 5 block shared memory allocator.
     class BlockSharedMemStOmp5 :
         public detail::BlockSharedMemStMemberImpl<4>,
-        public concepts::Implements<ConceptBlockSharedSt, BlockSharedMemStOmp5>
+        public concepts::ImplementsViaBase<ConceptBlockSharedSt, BlockSharedMemStOmp5>
     {
     public:
         using BlockSharedMemStMemberImpl<4>::BlockSharedMemStMemberImpl;

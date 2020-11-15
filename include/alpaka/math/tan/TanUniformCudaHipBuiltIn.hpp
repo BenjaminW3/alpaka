@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA tan.
-        class TanUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathTan, TanUniformCudaHipBuiltIn>
+        class TanUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathTan, TanUniformCudaHipBuiltIn>
         {
         };
 

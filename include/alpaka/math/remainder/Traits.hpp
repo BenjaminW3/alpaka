@@ -51,14 +51,14 @@ namespace alpaka
             Tx const & x,
             Ty const & y)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathRemainder, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathRemainder, T>;
             return
                 traits::Remainder<
-                    ImplementationBase,
+                    ImplementationType,
                     Tx,
                     Ty>
                 ::remainder(
-                    remainder_ctx,
+                    concepts::getImplementation<ConceptMathRemainder>(remainder_ctx),
                     x,
                     y);
         }

@@ -31,7 +31,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxBtRefFiberIdMap : public concepts::Implements<ConceptIdxBt, IdxBtRefFiberIdMap<TDim, TIdx>>
+        class IdxBtRefFiberIdMap : public concepts::ImplementsViaBase<ConceptIdxBt, IdxBtRefFiberIdMap<TDim, TIdx>>
         {
         public:
             using FiberIdToIdxMap = std::map<boost::fibers::fiber::id, Vec<TDim, TIdx>>;

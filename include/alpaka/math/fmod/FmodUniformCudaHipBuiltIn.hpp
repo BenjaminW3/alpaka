@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in fmod.
-        class FmodUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathFmod, FmodUniformCudaHipBuiltIn>
+        class FmodUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathFmod, FmodUniformCudaHipBuiltIn>
         {
         };
 

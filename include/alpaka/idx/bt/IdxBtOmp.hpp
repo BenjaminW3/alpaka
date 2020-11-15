@@ -32,7 +32,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxBtOmp : public concepts::Implements<ConceptIdxBt, IdxBtOmp<TDim, TIdx>>
+        class IdxBtOmp : public concepts::ImplementsViaBase<ConceptIdxBt, IdxBtOmp<TDim, TIdx>>
         {
         public:
             //-----------------------------------------------------------------------------

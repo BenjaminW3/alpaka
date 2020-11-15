@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library acos.
-        class AcosStdLib : public concepts::Implements<ConceptMathAcos, AcosStdLib>
+        class AcosStdLib : public concepts::ImplementsViaBase<ConceptMathAcos, AcosStdLib>
         {
         };
 

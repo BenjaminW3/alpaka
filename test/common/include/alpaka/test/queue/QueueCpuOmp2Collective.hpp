@@ -99,7 +99,7 @@ namespace alpaka
     // All other operations will be performed from one thread (it is not defined which thread).
     //
     // Outside of a OpenMP parallel region the queue behaves like QueueCpuBlocking.
-    class QueueCpuOmp2Collective final : public concepts::Implements<ConceptCurrentThreadWaitFor, QueueCpuOmp2Collective>
+    class QueueCpuOmp2Collective final : public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, QueueCpuOmp2Collective>
     {
     public:
         //-----------------------------------------------------------------------------

@@ -83,7 +83,7 @@ namespace alpaka
         public rand::RandStdLib,
         public TimeOmp,
         public warp::WarpSingleThread,
-        public concepts::Implements<ConceptAcc, AccCpuOmp2Threads<TDim, TIdx>>
+        public concepts::ImplementsViaBase<ConceptAcc, AccCpuOmp2Threads<TDim, TIdx>>
     {
         static_assert(sizeof(TIdx) >= sizeof(int), "Index type is not supported, consider using int or a larger type.");
     public:

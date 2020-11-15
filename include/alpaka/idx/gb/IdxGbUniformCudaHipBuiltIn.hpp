@@ -44,7 +44,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxGbUniformCudaHipBuiltIn : public concepts::Implements<ConceptIdxGb, IdxGbUniformCudaHipBuiltIn<TDim, TIdx>>
+        class IdxGbUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptIdxGb, IdxGbUniformCudaHipBuiltIn<TDim, TIdx>>
         {
         public:
             //-----------------------------------------------------------------------------

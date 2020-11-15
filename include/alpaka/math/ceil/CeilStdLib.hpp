@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library ceil.
-        class CeilStdLib : public concepts::Implements<ConceptMathCeil, CeilStdLib>
+        class CeilStdLib : public concepts::ImplementsViaBase<ConceptMathCeil, CeilStdLib>
         {
         };
 

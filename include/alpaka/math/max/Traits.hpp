@@ -52,14 +52,14 @@ namespace alpaka
             Tx const & x,
             Ty const & y)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathMax, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathMax, T>;
             return
                 traits::Max<
-                    ImplementationBase,
+                    ImplementationType,
                     Tx,
                     Ty>
                 ::max(
-                    max_ctx,
+                    concepts::getImplementation<ConceptMathMax>(max_ctx),
                     x,
                     y);
         }

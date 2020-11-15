@@ -112,9 +112,9 @@ namespace alpaka
             //#############################################################################
             //! The CUDA RT blocking queue.
             class QueueUniformCudaHipRtBase
-                : public concepts::Implements<ConceptCurrentThreadWaitFor, QueueUniformCudaHipRtBase>
-                , public concepts::Implements<ConceptQueue, QueueUniformCudaHipRtBase>
-                , public concepts::Implements<ConceptGetDev, QueueUniformCudaHipRtBase>
+                : public concepts::ImplementsViaBase<ConceptCurrentThreadWaitFor, QueueUniformCudaHipRtBase>
+                , public concepts::ImplementsViaBase<ConceptQueue, QueueUniformCudaHipRtBase>
+                , public concepts::ImplementsViaBase<ConceptGetDev, QueueUniformCudaHipRtBase>
             {
             public:
                 //-----------------------------------------------------------------------------

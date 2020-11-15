@@ -28,7 +28,7 @@ namespace alpaka
     //#############################################################################
     //! The OpenACC device platform.
     class PltfOacc :
-        public concepts::Implements<ConceptPltf, PltfOacc>
+        public concepts::ImplementsViaBase<ConceptPltf, PltfOacc>
     {
     public:
         //-----------------------------------------------------------------------------

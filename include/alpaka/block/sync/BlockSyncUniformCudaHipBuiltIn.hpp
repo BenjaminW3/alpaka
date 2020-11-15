@@ -27,7 +27,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The GPU CUDA/HIP block synchronization.
-    class BlockSyncUniformCudaHipBuiltIn : public concepts::Implements<ConceptBlockSync, BlockSyncUniformCudaHipBuiltIn>
+    class BlockSyncUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptBlockSync, BlockSyncUniformCudaHipBuiltIn>
     {
     public:
         //-----------------------------------------------------------------------------

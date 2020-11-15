@@ -26,7 +26,7 @@ namespace alpaka
     //! The thread id map barrier block synchronization.
     template<
         typename TIdx>
-    class BlockSyncBarrierFiber : public concepts::Implements<ConceptBlockSync, BlockSyncBarrierFiber<TIdx>>
+    class BlockSyncBarrierFiber : public concepts::ImplementsViaBase<ConceptBlockSync, BlockSyncBarrierFiber<TIdx>>
     {
     public:
         //-----------------------------------------------------------------------------

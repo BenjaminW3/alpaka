@@ -86,12 +86,12 @@ namespace alpaka
     ALPAKA_FN_HOST auto getDev(
         T const & t)
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptGetDev, T>;
+        using ImplementationType = concepts::ImplementationType<ConceptGetDev, T>;
         return
             traits::GetDev<
-                ImplementationBase>
+                ImplementationType>
             ::getDev(
-                t);
+                concepts::getImplementation<ConceptGetDev>(t));
     }
 
     //-----------------------------------------------------------------------------
@@ -183,7 +183,7 @@ namespace alpaka
             typename std::enable_if<concepts::ImplementsConcept<ConceptDev, TDev>::value>::type
         >
         {
-            using type = typename concepts::ImplementationBase<ConceptDev, TDev>;
+            using type = typename concepts::ImplementationType<ConceptDev, TDev>;
         };
     }
 }

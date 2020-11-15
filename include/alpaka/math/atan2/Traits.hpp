@@ -51,14 +51,14 @@ namespace alpaka
             Ty const & y,
             Tx const & x)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathAtan2, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathAtan2, T>;
             return
                 traits::Atan2<
-                    ImplementationBase,
+                    ImplementationType,
                     Ty,
                     Tx>
                 ::atan2(
-                    atan2_ctx,
+                    concepts::getImplementation<ConceptMathAtan2>(atan2_ctx),
                     y,
                     x);
         }

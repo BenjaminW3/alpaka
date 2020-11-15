@@ -46,13 +46,13 @@ namespace alpaka
             T const & tan_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathTan, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathTan, T>;
             return
                 traits::Tan<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::tan(
-                    tan_ctx,
+                    concepts::getImplementation<ConceptMathTan>(tan_ctx),
                     arg);
         }
     }

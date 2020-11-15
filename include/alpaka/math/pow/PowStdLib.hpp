@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library pow.
-        class PowStdLib : public concepts::Implements<ConceptMathPow, PowStdLib>
+        class PowStdLib : public concepts::ImplementsViaBase<ConceptMathPow, PowStdLib>
         {
         };
 

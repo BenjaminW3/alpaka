@@ -77,8 +77,8 @@ namespace alpaka
                 typename alpaka::traits::DevType<TAcc>::type const & dev)
             -> AccDevProps<typename traits::DimType<TAcc>::type, typename traits::IdxType<TAcc>::type>
             {
-                using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-                return GetAccDevProps<ImplementationBase>::getAccDevProps(dev);
+                using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+                return GetAccDevProps<ImplementationType>::getAccDevProps(concepts::getImplementation<ConceptUniformCudaHip>(dev));
             }
         };
     }
@@ -98,12 +98,12 @@ namespace alpaka
         TDev const & dev)
     -> AccDevProps<Dim<TAcc>, Idx<TAcc>>
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptAcc, TAcc>;
+        using ImplementationType = concepts::ImplementationType<ConceptAcc, TAcc>;
         return
             traits::GetAccDevProps<
-                ImplementationBase>
+                ImplementationType>
             ::getAccDevProps(
-                dev);
+                concepts::getImplementation<ConceptAcc>(dev));
     }
 
     //-----------------------------------------------------------------------------
@@ -137,8 +137,8 @@ namespace alpaka
                 TKernelFnObj const & kernelFnObj,
                 TArgs const & ... args)
             {
-                using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-                CheckFnReturnType<ImplementationBase>{}(
+                using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+                CheckFnReturnType<ImplementationType>{}(
                     kernelFnObj,
                     args...);
             }
@@ -156,8 +156,8 @@ namespace alpaka
                 concepts::ImplementsConcept<ConceptUniformCudaHip, TAcc>::value
             >::type>
         {
-            using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-            using type = typename DevType<ImplementationBase>::type;
+            using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+            using type = typename DevType<ImplementationType>::type;
         };
 
         //#############################################################################
@@ -169,8 +169,8 @@ namespace alpaka
                 concepts::ImplementsConcept<ConceptUniformCudaHip, TAcc>::value
             >::type>
             {
-                using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-                using type = typename PltfType<ImplementationBase>::type;
+                using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+                using type = typename PltfType<ImplementationType>::type;
             };
 
         //#############################################################################
@@ -182,8 +182,8 @@ namespace alpaka
                 concepts::ImplementsConcept<ConceptUniformCudaHip, TAcc>::value
             >::type>
         {
-                using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-                using type = typename DimType<ImplementationBase>::type;
+                using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+                using type = typename DimType<ImplementationType>::type;
         };
 
         //#############################################################################
@@ -195,8 +195,8 @@ namespace alpaka
                 concepts::ImplementsConcept<ConceptUniformCudaHip, TAcc>::value
             >::type>
         {
-            using ImplementationBase = typename concepts::ImplementationBase<ConceptUniformCudaHip, TAcc>;
-            using type = typename IdxType<ImplementationBase>::type;
+            using ImplementationType = typename concepts::ImplementationType<ConceptUniformCudaHip, TAcc>;
+            using type = typename IdxType<ImplementationType>::type;
         };
 
         template<

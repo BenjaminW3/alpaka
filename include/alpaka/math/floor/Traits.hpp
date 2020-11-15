@@ -46,13 +46,13 @@ namespace alpaka
             T const & floor_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathFloor, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathFloor, T>;
             return
                 traits::Floor<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::floor(
-                    floor_ctx,
+                    concepts::getImplementation<ConceptMathFloor>(floor_ctx),
                     arg);
         }
     }

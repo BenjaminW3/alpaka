@@ -52,7 +52,7 @@ namespace alpaka
 
     //#############################################################################
     //! The Fallback intrinsic.
-    class IntrinsicFallback : public concepts::Implements<ConceptIntrinsic, IntrinsicFallback>
+    class IntrinsicFallback : public concepts::ImplementsViaBase<ConceptIntrinsic, IntrinsicFallback>
     {
     public:
         //-----------------------------------------------------------------------------

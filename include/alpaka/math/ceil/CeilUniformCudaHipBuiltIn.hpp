@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in ceil.
-        class CeilUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathCeil, CeilUniformCudaHipBuiltIn>
+        class CeilUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathCeil, CeilUniformCudaHipBuiltIn>
         {
         };
 

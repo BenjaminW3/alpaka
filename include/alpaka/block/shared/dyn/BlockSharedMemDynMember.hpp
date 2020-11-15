@@ -48,7 +48,7 @@ namespace alpaka
     //! memory.
     template<std::size_t TStaticAllocKiB = ALPAKA_BLOCK_SHARED_DYN_MEMBER_ALLOC_KIB>
     class alignas(core::vectorization::defaultAlignment) BlockSharedMemDynMember :
-        public concepts::Implements<ConceptBlockSharedDyn, BlockSharedMemDynMember<TStaticAllocKiB>>
+        public concepts::ImplementsViaBase<ConceptBlockSharedDyn, BlockSharedMemDynMember<TStaticAllocKiB>>
     {
     public:
         //-----------------------------------------------------------------------------

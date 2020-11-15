@@ -48,7 +48,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in max.
-        class MaxUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathMax, MaxUniformCudaHipBuiltIn>
+        class MaxUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathMax, MaxUniformCudaHipBuiltIn>
         {
         };
 

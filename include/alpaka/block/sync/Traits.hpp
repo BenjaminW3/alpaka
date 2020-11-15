@@ -50,11 +50,11 @@ namespace alpaka
         TBlockSync const & blockSync)
     -> void
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptBlockSync, TBlockSync>;
+        using ImplementationType = concepts::ImplementationType<ConceptBlockSync, TBlockSync>;
         traits::SyncBlockThreads<
-            ImplementationBase>
+            ImplementationType>
         ::syncBlockThreads(
-            blockSync);
+            concepts::getImplementation<ConceptBlockSync>(blockSync));
     }
 
     //#############################################################################
@@ -127,13 +127,13 @@ namespace alpaka
         int predicate)
     -> int
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptBlockSync, TBlockSync>;
+        using ImplementationType = concepts::ImplementationType<ConceptBlockSync, TBlockSync>;
         return
             traits::SyncBlockThreadsPredicate<
                 TOp,
-                ImplementationBase>
+                ImplementationType>
             ::syncBlockThreadsPredicate(
-                blockSync,
+                concepts::getImplementation<ConceptBlockSync>(blockSync),
                 predicate);
     }
 }

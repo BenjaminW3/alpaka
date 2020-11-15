@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in floor.
-        class FloorUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathFloor, FloorUniformCudaHipBuiltIn>
+        class FloorUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathFloor, FloorUniformCudaHipBuiltIn>
         {
         };
 

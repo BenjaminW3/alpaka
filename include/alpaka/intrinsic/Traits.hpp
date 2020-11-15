@@ -52,11 +52,11 @@ namespace alpaka
         std::uint32_t value)
     -> std::int32_t
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptIntrinsic, TIntrinsic>;
+        using ImplementationType = concepts::ImplementationType<ConceptIntrinsic, TIntrinsic>;
         return traits::Popcount<
-            ImplementationBase>
+            ImplementationType>
         ::popcount(
-            intrinsic,
+            concepts::getImplementation<ConceptIntrinsic>(intrinsic),
             value);
     }
 
@@ -74,11 +74,11 @@ namespace alpaka
         std::uint64_t value)
     -> std::int32_t
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptIntrinsic, TIntrinsic>;
+        using ImplementationType = concepts::ImplementationType<ConceptIntrinsic, TIntrinsic>;
         return traits::Popcount<
-            ImplementationBase>
+            ImplementationType>
         ::popcount(
-            intrinsic,
+            concepts::getImplementation<ConceptIntrinsic>(intrinsic),
             value);
     }
 
@@ -97,11 +97,11 @@ namespace alpaka
         std::int32_t value)
     -> std::int32_t
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptIntrinsic, TIntrinsic>;
+        using ImplementationType = concepts::ImplementationType<ConceptIntrinsic, TIntrinsic>;
         return traits::Ffs<
-            ImplementationBase>
+            ImplementationType>
         ::ffs(
-            intrinsic,
+            concepts::getImplementation<ConceptIntrinsic>(intrinsic),
             value);
     }
 
@@ -120,11 +120,11 @@ namespace alpaka
         std::int64_t value)
     -> std::int32_t
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptIntrinsic, TIntrinsic>;
+        using ImplementationType = concepts::ImplementationType<ConceptIntrinsic, TIntrinsic>;
         return traits::Ffs<
-            ImplementationBase>
+            ImplementationType>
         ::ffs(
-            intrinsic,
+            concepts::getImplementation<ConceptIntrinsic>(intrinsic),
             value);
     }
 }

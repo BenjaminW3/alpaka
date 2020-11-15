@@ -75,13 +75,11 @@ namespace alpaka
             TWarp const & warp)
         -> std::int32_t
         {
-            using ImplementationBase = concepts::ImplementationBase<
-                ConceptWarp,
-                TWarp>;
+            using ImplementationType = concepts::ImplementationType<ConceptWarp, TWarp>;
             return traits::GetSize<
-                ImplementationBase>
+                ImplementationType>
             ::getSize(
-                warp);
+                concepts::getImplementation<ConceptWarp>(warp));
         }
 
         //-----------------------------------------------------------------------------
@@ -102,15 +100,13 @@ namespace alpaka
             typename TWarp>
         ALPAKA_FN_ACC auto activemask(
             TWarp const & warp) -> decltype(traits::Activemask<
-                concepts::ImplementationBase<ConceptWarp, TWarp> >::activemask(warp))
+                concepts::ImplementationType<ConceptWarp, TWarp> >::activemask(warp))
         {
-            using ImplementationBase = concepts::ImplementationBase<
-                ConceptWarp,
-                TWarp>;
+            using ImplementationType = concepts::ImplementationType<ConceptWarp, TWarp>;
             return traits::Activemask<
-                ImplementationBase>
+                ImplementationType>
                 ::activemask(
-                    warp);
+                    concepts::getImplementation<ConceptWarp>(warp));
         }
 
         //-----------------------------------------------------------------------------
@@ -132,11 +128,11 @@ namespace alpaka
             std::int32_t predicate)
         -> std::int32_t
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptWarp, TWarp>;
+            using ImplementationType = concepts::ImplementationType<ConceptWarp, TWarp>;
             return traits::All<
-                ImplementationBase>
+                ImplementationType>
             ::all(
-                warp,
+                concepts::getImplementation<ConceptWarp>(warp),
                 predicate);
         }
 
@@ -159,11 +155,11 @@ namespace alpaka
             std::int32_t predicate)
         -> std::int32_t
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptWarp, TWarp>;
+            using ImplementationType = concepts::ImplementationType<ConceptWarp, TWarp>;
             return traits::Any<
-                ImplementationBase>
+                ImplementationType>
             ::any(
-                warp,
+                concepts::getImplementation<ConceptWarp>(warp),
                 predicate);
         }
 
@@ -189,11 +185,11 @@ namespace alpaka
             TWarp const & warp,
             std::int32_t predicate)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptWarp, TWarp>;
+            using ImplementationType = concepts::ImplementationType<ConceptWarp, TWarp>;
             return traits::Ballot<
-                ImplementationBase>
+                ImplementationType>
             ::ballot(
-                warp,
+                concepts::getImplementation<ConceptWarp>(warp),
                 predicate);
         }
     }

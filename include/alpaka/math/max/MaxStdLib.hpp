@@ -23,7 +23,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library max.
-        class MaxStdLib : public concepts::Implements<ConceptMathMax, MaxStdLib>
+        class MaxStdLib : public concepts::ImplementsViaBase<ConceptMathMax, MaxStdLib>
         {
         };
 

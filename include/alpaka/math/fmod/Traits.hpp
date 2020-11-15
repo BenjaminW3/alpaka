@@ -51,14 +51,14 @@ namespace alpaka
             Tx const & x,
             Ty const & y)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathFmod, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathFmod, T>;
             return
                 traits::Fmod<
-                    ImplementationBase,
+                    ImplementationType,
                     Tx,
                     Ty>
                 ::fmod(
-                    fmod_ctx,
+                    concepts::getImplementation<ConceptMathFmod>(fmod_ctx),
                     x,
                     y);
         }

@@ -51,12 +51,12 @@ namespace alpaka
             TArg & result_cos)
         -> void
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathSinCos, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathSinCos, T>;
             traits::SinCos<
-                ImplementationBase,
+                ImplementationType,
                 TArg>
                 ::sincos(
-                    sincos_ctx,
+                    concepts::getImplementation<ConceptMathSinCos>(sincos_ctx),
                     arg,
                     result_sin,
                     result_cos

@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in acos.
-        class AcosUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathAcos, AcosUniformCudaHipBuiltIn>
+        class AcosUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathAcos, AcosUniformCudaHipBuiltIn>
         {
         };
 

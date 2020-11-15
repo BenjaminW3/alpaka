@@ -31,7 +31,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxBtRefThreadIdMap : public concepts::Implements<ConceptIdxBt, IdxBtRefThreadIdMap<TDim, TIdx>>
+        class IdxBtRefThreadIdMap : public concepts::ImplementsViaBase<ConceptIdxBt, IdxBtRefThreadIdMap<TDim, TIdx>>
         {
         public:
             using ThreadIdToIdxMap = std::map<std::thread::id, Vec<TDim, TIdx>>;

@@ -40,7 +40,7 @@ namespace alpaka
     //#############################################################################
     //! The CUDA/HIP RT platform.
     class PltfUniformCudaHipRt :
-        public concepts::Implements<ConceptPltf, PltfUniformCudaHipRt>
+        public concepts::ImplementsViaBase<ConceptPltf, PltfUniformCudaHipRt>
     {
     public:
         //-----------------------------------------------------------------------------

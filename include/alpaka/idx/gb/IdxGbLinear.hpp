@@ -27,7 +27,7 @@ namespace alpaka
         template<
             typename TDim,
             typename TIdx>
-        class IdxGbLinear : public concepts::Implements<ConceptIdxGb, IdxGbLinear<TDim, TIdx>>
+        class IdxGbLinear : public concepts::ImplementsViaBase<ConceptIdxGb, IdxGbLinear<TDim, TIdx>>
         {
         public:
             //-----------------------------------------------------------------------------

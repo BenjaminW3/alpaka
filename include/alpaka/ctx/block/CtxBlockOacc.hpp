@@ -48,7 +48,7 @@ namespace alpaka
         public BlockSharedMemDynMember<>,
         public detail::BlockSharedMemStMemberImpl<4>,
         public BlockSyncBarrierOacc,
-        public concepts::Implements<ConceptBlockSharedSt, CtxBlockOacc<TDim, TIdx>>
+        public concepts::ImplementsViaBase<ConceptBlockSharedSt, CtxBlockOacc<TDim, TIdx>>
     {
     public:
         // Partial specialization with the correct TDim and TIdx is not allowed.

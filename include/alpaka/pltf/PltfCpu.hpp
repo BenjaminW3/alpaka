@@ -22,7 +22,7 @@ namespace alpaka
     //#############################################################################
     //! The CPU device platform.
     class PltfCpu :
-        public concepts::Implements<ConceptPltf, PltfCpu>
+        public concepts::ImplementsViaBase<ConceptPltf, PltfCpu>
     {
     public:
         //-----------------------------------------------------------------------------

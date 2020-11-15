@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in abs.
-        class AbsUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathAbs, AbsUniformCudaHipBuiltIn>
+        class AbsUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathAbs, AbsUniformCudaHipBuiltIn>
         {
         };
 

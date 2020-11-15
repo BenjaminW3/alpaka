@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in atan2.
-        class Atan2UniformCudaHipBuiltIn : public concepts::Implements<ConceptMathAtan2, Atan2UniformCudaHipBuiltIn>
+        class Atan2UniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathAtan2, Atan2UniformCudaHipBuiltIn>
         {
         };
 

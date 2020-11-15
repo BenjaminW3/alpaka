@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in asin.
-        class AsinUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathAsin, AsinUniformCudaHipBuiltIn>
+        class AsinUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathAsin, AsinUniformCudaHipBuiltIn>
         {
         };
 

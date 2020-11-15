@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA sqrt.
-        class SqrtUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathSqrt, SqrtUniformCudaHipBuiltIn>
+        class SqrtUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathSqrt, SqrtUniformCudaHipBuiltIn>
         {
         };
 

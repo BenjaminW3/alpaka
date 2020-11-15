@@ -22,7 +22,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The block shared dynamic memory allocator without synchronization.
-    class BlockSharedMemDynAlignedAlloc : public concepts::Implements<ConceptBlockSharedDyn, BlockSharedMemDynAlignedAlloc>
+    class BlockSharedMemDynAlignedAlloc : public concepts::ImplementsViaBase<ConceptBlockSharedDyn, BlockSharedMemDynAlignedAlloc>
     {
     public:
         //-----------------------------------------------------------------------------

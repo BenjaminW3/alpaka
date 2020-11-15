@@ -46,13 +46,13 @@ namespace alpaka
             T const & trunc_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathTrunc, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathTrunc, T>;
             return
                 traits::Trunc<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::trunc(
-                    trunc_ctx,
+                    concepts::getImplementation<ConceptMathTrunc>(trunc_ctx),
                     arg);
         }
     }

@@ -16,12 +16,20 @@ namespace alpaka
     namespace concepts
     {
         //#############################################################################
+        //! Tag used in class inheritance hierarchies that describes that a specific concept (TConcept) is implemented.
+        template<
+            typename TConcept>
+        struct Implements
+        {
+        };
+
+        //#############################################################################
         //! Tag used in class inheritance hierarchies that describes that a specific concept (TConcept)
         //! is implemented by the given base class (TBase).
         template<
             typename TConcept,
             typename TBase>
-        struct Implements
+        struct ImplementsViaBase : public Implements<TConcept>
         {
         };
 
@@ -29,14 +37,25 @@ namespace alpaka
         //! Checks whether the concept is implemented by the given class
         template<
             typename TConcept,
-            typename TDerived>
+            typename TType>
         struct ImplementsConcept {
-            template<
-                typename TBase>
-            static auto implements(Implements<TConcept, TBase>&) -> std::true_type;
+            static auto implements(Implements<TConcept>&) -> std::true_type;
             static auto implements(...) -> std::false_type;
 
-            static constexpr auto value = decltype(implements(std::declval<TDerived&>()))::value;
+            static constexpr auto value = decltype(implements(std::declval<TType&>()))::value;
+        };
+
+        //#############################################################################
+        //! Checks whether the concept is implemented by the given class via inheritance
+        template<
+            typename TConcept,
+            typename TType>
+        struct ImplementsConceptViaBase {
+            template<typename TBase>
+            static auto implements(ImplementsViaBase<TConcept, TBase>&) -> std::true_type;
+            static auto implements(...) -> std::false_type;
+
+            static constexpr auto value = decltype(implements(std::declval<TType&>()))::value;
         };
 
         namespace detail
@@ -45,40 +64,50 @@ namespace alpaka
             //! Returns the type that implements the given concept in the inheritance hierarchy.
             template<
                 typename TConcept,
-                typename TDerived,
+                typename TType,
                 typename Sfinae = void>
-            struct ImplementationBaseType;
+            struct GetImplementation;
 
             //#############################################################################
-            //! Base case for types that do not inherit from "Implements<TConcept, ...>" is the type itself.
+            //! Base case for types that do not inherit from "ImplementsViaBase<TConcept, ...>" is the type itself.
             template<
                 typename TConcept,
-                typename TDerived>
-            struct ImplementationBaseType<
+                typename TType>
+            struct GetImplementation<
                 TConcept,
-                TDerived,
-                std::enable_if_t<!ImplementsConcept<TConcept, TDerived>::value>>
+                TType,
+                std::enable_if_t<!ImplementsConcept<TConcept, TType>::value>>
             {
-                using type = TDerived;
+                using Type = TType;
+
+                static decltype(auto) getImplementation(TType const & type)
+                {
+                    return type;
+                }
             };
 
             //#############################################################################
-            //! For types that inherit from "Implements<TConcept, ...>" it finds the base class (TBase) which implements the concept.
+            //! For types that inherit from "ImplementsViaBase<TConcept, ...>" it finds the base class (TBase) which implements the concept.
             template<
                 typename TConcept,
-                typename TDerived>
-            struct ImplementationBaseType<
+                typename TType>
+            struct GetImplementation<
                 TConcept,
-                TDerived,
-                std::enable_if_t<ImplementsConcept<TConcept, TDerived>::value>>
+                TType,
+                std::enable_if_t<ImplementsConceptViaBase<TConcept, TType>::value>>
             {
                 template<
                     typename TBase>
-                static auto implementer(Implements<TConcept, TBase>&) -> TBase;
+                static auto implementer(ImplementsViaBase<TConcept, TBase>&) -> TBase;
 
-                using type = decltype(implementer(std::declval<TDerived&>()));
+                using Type = decltype(implementer(std::declval<TType&>()));
 
-                static_assert(std::is_base_of<type, TDerived>::value, "The type implementing the concept has to be a publicly accessible base class!");
+                static_assert(std::is_base_of<Type, TType>::value, "The type implementing the concept has to be a publicly accessible base class!");
+
+                static decltype(auto) getImplementation(TType const & type)
+                {
+                    return static_cast<Type const &>(type);
+                }
             };
         }
 
@@ -86,7 +115,15 @@ namespace alpaka
         //! Returns the type that implements the given concept in the inheritance hierarchy.
         template<
             typename TConcept,
-            typename TDerived>
-        using ImplementationBase = typename detail::ImplementationBaseType<TConcept, TDerived>::type;
+            typename TType>
+        static auto getImplementation(TType const & type) -> typename detail::GetImplementation<TConcept, TType>::Type const &
+        {
+            return detail::GetImplementation<TConcept, TType>::getImplementation(type);
+        };
+
+        template<
+            typename TConcept,
+            typename TType>
+        using ImplementationType = typename detail::GetImplementation<TConcept, TType>::Type;
     }
 }

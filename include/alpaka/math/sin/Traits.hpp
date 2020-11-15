@@ -46,13 +46,13 @@ namespace alpaka
             T const & sin_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathSin, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathSin, T>;
             return
                 traits::Sin<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::sin(
-                    sin_ctx,
+                    concepts::getImplementation<ConceptMathSin>(sin_ctx),
                     arg);
         }
     }

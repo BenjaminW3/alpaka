@@ -68,13 +68,13 @@ namespace alpaka
                     std::is_floating_point<T>::value,
                     "The value type T has to be a floating point type!");
 
-                using ImplementationBase = concepts::ImplementationBase<ConceptRand, TRand>;
+                using ImplementationType = concepts::ImplementationType<ConceptRand, TRand>;
                 return
                     traits::CreateNormalReal<
-                        ImplementationBase,
+                        ImplementationType,
                         T>
                     ::createNormalReal(
-                        rand);
+                        concepts::getImplementation<ConceptRand>(rand));
             }
             //-----------------------------------------------------------------------------
             //! \return A uniform floating point distribution [0.0, 1.0).
@@ -89,13 +89,13 @@ namespace alpaka
                     std::is_floating_point<T>::value,
                     "The value type T has to be a floating point type!");
 
-                using ImplementationBase = concepts::ImplementationBase<ConceptRand, TRand>;
+                using ImplementationType = concepts::ImplementationType<ConceptRand, TRand>;
                 return
                     traits::CreateUniformReal<
-                        ImplementationBase,
+                        ImplementationType,
                         T>
                     ::createUniformReal(
-                        rand);
+                        concepts::getImplementation<ConceptRand>(rand));
             }
             //-----------------------------------------------------------------------------
             //! \return A uniform integer distribution [0, UINT_MAX].
@@ -110,13 +110,13 @@ namespace alpaka
                     std::is_integral<T>::value && std::is_unsigned<T>::value,
                     "The value type T has to be a unsigned integral type!");
 
-                using ImplementationBase = concepts::ImplementationBase<ConceptRand, TRand>;
+                using ImplementationType = concepts::ImplementationType<ConceptRand, TRand>;
                 return
                     traits::CreateUniformUint<
-                        ImplementationBase,
+                        ImplementationType,
                         T>
                     ::createUniformUint(
-                        rand);
+                        concepts::getImplementation<ConceptRand>(rand));
             }
         }
 
@@ -145,12 +145,12 @@ namespace alpaka
                 std::uint32_t const & seed,
                 std::uint32_t const & subsequence)
             {
-                using ImplementationBase = concepts::ImplementationBase<ConceptRand, TRand>;
+                using ImplementationType = concepts::ImplementationType<ConceptRand, TRand>;
                 return
                     traits::CreateDefault<
-                        ImplementationBase>
+                        ImplementationType>
                     ::createDefault(
-                        rand,
+                        concepts::getImplementation<ConceptRand>(rand),
                         seed,
                         subsequence);
             }

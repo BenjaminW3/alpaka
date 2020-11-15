@@ -44,11 +44,11 @@ namespace alpaka
         TAwaited const & awaited)
     -> void
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptCurrentThreadWaitFor, TAwaited>;
+        using ImplementationType = concepts::ImplementationType<ConceptCurrentThreadWaitFor, TAwaited>;
         traits::CurrentThreadWaitFor<
-            ImplementationBase>
+            ImplementationType>
         ::currentThreadWaitFor(
-            awaited);
+            concepts::getImplementation<ConceptCurrentThreadWaitFor>(awaited));
     }
 
     //-----------------------------------------------------------------------------

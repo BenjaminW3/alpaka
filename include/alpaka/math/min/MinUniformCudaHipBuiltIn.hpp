@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in min.
-        class MinUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathMin, MinUniformCudaHipBuiltIn>
+        class MinUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathMin, MinUniformCudaHipBuiltIn>
         {
         };
 

@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library exp.
-        class ExpStdLib : public concepts::Implements<ConceptMathExp, ExpStdLib>
+        class ExpStdLib : public concepts::ImplementsViaBase<ConceptMathExp, ExpStdLib>
         {
         };
 

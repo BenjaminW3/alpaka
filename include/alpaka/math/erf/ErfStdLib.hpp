@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library erf.
-        class ErfStdLib : public concepts::Implements<ConceptMathErf, ErfStdLib>
+        class ErfStdLib : public concepts::ImplementsViaBase<ConceptMathErf, ErfStdLib>
         {
         };
 

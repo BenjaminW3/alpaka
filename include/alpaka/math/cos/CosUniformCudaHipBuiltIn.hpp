@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in cos.
-        class CosUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathCos, CosUniformCudaHipBuiltIn>
+        class CosUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathCos, CosUniformCudaHipBuiltIn>
         {
         };
 

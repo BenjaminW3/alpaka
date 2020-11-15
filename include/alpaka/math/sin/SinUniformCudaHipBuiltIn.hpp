@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA sin.
-        class SinUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathSin, SinUniformCudaHipBuiltIn>
+        class SinUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathSin, SinUniformCudaHipBuiltIn>
         {
         };
 

@@ -28,7 +28,7 @@ namespace alpaka
     //#############################################################################
     //! The OpenMP 5 device platform.
     class PltfOmp5 :
-        public concepts::Implements<ConceptPltf, PltfOmp5>
+        public concepts::ImplementsViaBase<ConceptPltf, PltfOmp5>
     {
     public:
         //-----------------------------------------------------------------------------

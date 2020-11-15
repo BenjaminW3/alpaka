@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library cbrt.
-        class CbrtStdLib : public concepts::Implements<ConceptMathCbrt, CbrtStdLib>
+        class CbrtStdLib : public concepts::ImplementsViaBase<ConceptMathCbrt, CbrtStdLib>
         {
         };
 

@@ -56,14 +56,14 @@ namespace alpaka
         TBlockSharedMemSt const & blockSharedMemSt)
     -> T &
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptBlockSharedSt, TBlockSharedMemSt>;
+        using ImplementationType = concepts::ImplementationType<ConceptBlockSharedSt, TBlockSharedMemSt>;
         return
             traits::AllocVar<
                 T,
                 TuniqueId,
-                ImplementationBase>
+                ImplementationType>
             ::allocVar(
-                blockSharedMemSt);
+                concepts::getImplementation<ConceptBlockSharedSt>(blockSharedMemSt));
     }
 
     //-----------------------------------------------------------------------------
@@ -78,10 +78,10 @@ namespace alpaka
         TBlockSharedMemSt & blockSharedMemSt)
     -> void
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptBlockSharedSt, TBlockSharedMemSt>;
+        using ImplementationType = concepts::ImplementationType<ConceptBlockSharedSt, TBlockSharedMemSt>;
         traits::FreeMem<
-            ImplementationBase>
+            ImplementationType>
         ::freeMem(
-            blockSharedMemSt);
+            concepts::getImplementation<ConceptBlockSharedSt>(blockSharedMemSt));
     }
 }

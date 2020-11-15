@@ -20,7 +20,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The OpenMP barrier block synchronization.
-    class BlockSyncBarrierOmp : public concepts::Implements<ConceptBlockSync, BlockSyncBarrierOmp>
+    class BlockSyncBarrierOmp : public concepts::ImplementsViaBase<ConceptBlockSync, BlockSyncBarrierOmp>
     {
     public:
         //-----------------------------------------------------------------------------

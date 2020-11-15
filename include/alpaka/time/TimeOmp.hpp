@@ -22,7 +22,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The OpenMP accelerator time implementation.
-    class TimeOmp : public concepts::Implements<ConceptTime, TimeOmp>
+    class TimeOmp : public concepts::ImplementsViaBase<ConceptTime, TimeOmp>
     {
     public:
         //-----------------------------------------------------------------------------

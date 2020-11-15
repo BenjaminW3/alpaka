@@ -80,7 +80,7 @@ namespace alpaka
             origin::Grid,
             unit::Blocks>
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptIdxGb, TIdxGb>;
+            using ImplementationType = concepts::ImplementationType<ConceptIdxGb, TIdxGb>;
             //-----------------------------------------------------------------------------
             //! \return The index of the current thread in the grid.
             ALPAKA_NO_HOST_ACC_WARNING
@@ -89,15 +89,15 @@ namespace alpaka
             ALPAKA_FN_HOST_ACC static auto getIdx(
                 TIdxGb const & idx,
                 TWorkDiv const & workDiv)
-            -> Vec<Dim<ImplementationBase>, Idx<ImplementationBase>>
+            -> Vec<Dim<ImplementationType>, Idx<ImplementationType>>
             {
                 return
                     traits::GetIdx<
-                        ImplementationBase,
+                        ImplementationType,
                         origin::Grid,
                         unit::Blocks>
                     ::getIdx(
-                        idx,
+                        concepts::getImplementation<ConceptIdxGb>(idx),
                         workDiv);
             }
         };
@@ -111,7 +111,7 @@ namespace alpaka
             origin::Block,
             unit::Threads>
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptIdxBt, TIdxBt>;
+            using ImplementationType = concepts::ImplementationType<ConceptIdxBt, TIdxBt>;
             //-----------------------------------------------------------------------------
             //! \return The index of the current thread in the grid.
             ALPAKA_NO_HOST_ACC_WARNING
@@ -120,15 +120,15 @@ namespace alpaka
             ALPAKA_FN_HOST_ACC static auto getIdx(
                 TIdxBt const & idx,
                 TWorkDiv const & workDiv)
-            -> Vec<Dim<ImplementationBase>, Idx<ImplementationBase>>
+            -> Vec<Dim<ImplementationType>, Idx<ImplementationType>>
             {
                 return
                     traits::GetIdx<
-                        ImplementationBase,
+                        ImplementationType,
                         origin::Block,
                         unit::Threads>
                     ::getIdx(
-                        idx,
+                        concepts::getImplementation<ConceptIdxBt>(idx),
                         workDiv);
             }
         };

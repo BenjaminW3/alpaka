@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library atan.
-        class AtanStdLib : public concepts::Implements<ConceptMathAtan, AtanStdLib>
+        class AtanStdLib : public concepts::ImplementsViaBase<ConceptMathAtan, AtanStdLib>
         {
         };
 

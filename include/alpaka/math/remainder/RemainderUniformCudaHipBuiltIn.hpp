@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in remainder.
-        class RemainderUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathRemainder, RemainderUniformCudaHipBuiltIn>
+        class RemainderUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathRemainder, RemainderUniformCudaHipBuiltIn>
         {
         };
 

@@ -30,7 +30,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The GPU CUDA/HIP block shared memory allocator.
-    class BlockSharedMemStUniformCudaHipBuiltIn : public concepts::Implements<ConceptBlockSharedSt, BlockSharedMemStUniformCudaHipBuiltIn>
+    class BlockSharedMemStUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptBlockSharedSt, BlockSharedMemStUniformCudaHipBuiltIn>
     {
     public:
         //-----------------------------------------------------------------------------

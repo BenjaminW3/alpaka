@@ -45,13 +45,13 @@ namespace alpaka
             T const & atan_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathAtan, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathAtan, T>;
             return
                 traits::Atan<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::atan(
-                    atan_ctx,
+                    concepts::getImplementation<ConceptMathAtan>(atan_ctx),
                     arg);
         }
     }

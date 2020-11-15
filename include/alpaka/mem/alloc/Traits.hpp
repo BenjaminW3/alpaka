@@ -51,13 +51,13 @@ namespace alpaka
         std::size_t const & sizeElems)
     -> T *
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptMemAlloc, TAlloc>;
+        using ImplementationType = concepts::ImplementationType<ConceptMemAlloc, TAlloc>;
         return
             traits::Malloc<
                 T,
-                ImplementationBase>
+                ImplementationType>
             ::malloc(
-                alloc,
+                concepts::getImplementation<ConceptMemAlloc>(alloc),
                 sizeElems);
     }
 
@@ -71,12 +71,12 @@ namespace alpaka
         T const * const ptr)
     -> void
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptMemAlloc, TAlloc>;
+        using ImplementationType = concepts::ImplementationType<ConceptMemAlloc, TAlloc>;
         traits::Free<
             T,
-            ImplementationBase>
+            ImplementationType>
         ::free(
-            alloc,
+            concepts::getImplementation<ConceptMemAlloc>(alloc),
             ptr);
     }
 }

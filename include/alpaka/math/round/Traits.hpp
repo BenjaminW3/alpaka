@@ -62,13 +62,13 @@ namespace alpaka
             T const & round_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathRound, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathRound, T>;
             return
                 traits::Round<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::round(
-                    round_ctx,
+                    concepts::getImplementation<ConceptMathRound>(round_ctx),
                     arg);
         }
         //-----------------------------------------------------------------------------
@@ -87,13 +87,13 @@ namespace alpaka
             TArg const & arg)
         -> long int
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathRound, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathRound, T>;
             return
                 traits::Lround<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::lround(
-                    lround_ctx,
+                    concepts::getImplementation<ConceptMathRound>(lround_ctx),
                     arg);
         }
         //-----------------------------------------------------------------------------
@@ -112,13 +112,13 @@ namespace alpaka
             TArg const & arg)
         -> long long int
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathRound, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathRound, T>;
             return
                 traits::Llround<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::llround(
-                    llround_ctx,
+                    concepts::getImplementation<ConceptMathRound>(llround_ctx),
                     arg);
         }
     }

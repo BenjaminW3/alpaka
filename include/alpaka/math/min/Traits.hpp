@@ -52,14 +52,14 @@ namespace alpaka
             Tx const & x,
             Ty const & y)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathMin, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathMin, T>;
             return
                 traits::Min<
-                    ImplementationBase,
+                    ImplementationType,
                     Tx,
                     Ty>
                 ::min(
-                    min_ctx,
+                    concepts::getImplementation<ConceptMathMin>(min_ctx),
                     x,
                     y);
         }

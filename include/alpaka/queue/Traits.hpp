@@ -80,12 +80,12 @@ namespace alpaka
         TQueue const & queue)
     -> bool
     {
-        using ImplementationBase = concepts::ImplementationBase<ConceptQueue, TQueue>;
+        using ImplementationType = concepts::ImplementationType<ConceptQueue, TQueue>;
         return
             traits::Empty<
-                ImplementationBase>
+                ImplementationType>
             ::empty(
-                queue);
+                concepts::getImplementation<ConceptQueue>(queue));
     }
 
     //-----------------------------------------------------------------------------

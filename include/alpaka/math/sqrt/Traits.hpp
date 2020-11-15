@@ -50,13 +50,13 @@ namespace alpaka
             T const & sqrt_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathSqrt, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathSqrt, T>;
             return
                 traits::Sqrt<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::sqrt(
-                    sqrt_ctx,
+                    concepts::getImplementation<ConceptMathSqrt>(sqrt_ctx),
                     arg);
         }
     }

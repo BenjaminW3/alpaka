@@ -27,7 +27,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The GPU CUDA accelerator time implementation.
-    class TimeUniformCudaHipBuiltIn : public concepts::Implements<ConceptTime, TimeUniformCudaHipBuiltIn>
+    class TimeUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptTime, TimeUniformCudaHipBuiltIn>
     {
     public:
         //-----------------------------------------------------------------------------

@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library rsqrt.
-        class RsqrtStdLib : public concepts::Implements<ConceptMathRsqrt, RsqrtStdLib>
+        class RsqrtStdLib : public concepts::ImplementsViaBase<ConceptMathRsqrt, RsqrtStdLib>
         {
         };
 

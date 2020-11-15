@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library cos.
-        class CosStdLib : public concepts::Implements<ConceptMathCos, CosStdLib>
+        class CosStdLib : public concepts::ImplementsViaBase<ConceptMathCos, CosStdLib>
         {
         };
 

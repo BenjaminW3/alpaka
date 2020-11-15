@@ -48,13 +48,13 @@ namespace alpaka
             T const & abs_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathAbs, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathAbs, T>;
             return
                 traits::Abs<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::abs(
-                    abs_ctx,
+                    concepts::getImplementation<ConceptMathAbs>(abs_ctx),
                     arg);
         }
     }

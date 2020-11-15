@@ -46,13 +46,13 @@ namespace alpaka
             T const & cos_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathCos, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathCos, T>;
             return
                 traits::Cos<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::cos(
-                    cos_ctx,
+                    concepts::getImplementation<ConceptMathCos>(cos_ctx),
                     arg);
         }
     }

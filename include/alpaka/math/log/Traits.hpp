@@ -50,13 +50,13 @@ namespace alpaka
             T const & log_ctx,
             TArg const & arg)
         {
-            using ImplementationBase = concepts::ImplementationBase<ConceptMathLog, T>;
+            using ImplementationType = concepts::ImplementationType<ConceptMathLog, T>;
             return
                 traits::Log<
-                    ImplementationBase,
+                    ImplementationType,
                     TArg>
                 ::log(
-                    log_ctx,
+                    concepts::getImplementation<ConceptMathLog>(log_ctx),
                     arg);
         }
     }

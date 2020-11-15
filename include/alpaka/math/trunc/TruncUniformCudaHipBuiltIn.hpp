@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA trunc.
-        class TruncUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathTrunc, TruncUniformCudaHipBuiltIn>
+        class TruncUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathTrunc, TruncUniformCudaHipBuiltIn>
         {
         };
 

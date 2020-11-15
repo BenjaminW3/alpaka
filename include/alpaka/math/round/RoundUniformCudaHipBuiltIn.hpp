@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA round.
-        class RoundUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathRound, RoundUniformCudaHipBuiltIn>
+        class RoundUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathRound, RoundUniformCudaHipBuiltIn>
         {
         };
 

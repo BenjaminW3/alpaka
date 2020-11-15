@@ -22,7 +22,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The standard library trunc.
-        class TruncStdLib : public concepts::Implements<ConceptMathTrunc, TruncStdLib>
+        class TruncStdLib : public concepts::ImplementsViaBase<ConceptMathTrunc, TruncStdLib>
         {
         };
 

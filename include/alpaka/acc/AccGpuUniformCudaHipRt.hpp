@@ -84,7 +84,7 @@ namespace alpaka
         public rand::RandUniformCudaHipRand,
         public TimeUniformCudaHipBuiltIn,
         public warp::WarpUniformCudaHipBuiltIn,
-        public concepts::Implements<ConceptAcc, AccGpuUniformCudaHipRt<TDim, TIdx>>
+        public concepts::ImplementsViaBase<ConceptAcc, AccGpuUniformCudaHipRt<TDim, TIdx>>
     {
         static_assert(sizeof(TIdx) >= sizeof(int), "Index type is not supported, consider using int or a larger type.");
     public:

@@ -40,7 +40,7 @@ namespace alpaka
             typename std::enable_if<concepts::ImplementsConcept<ConceptPltf, TPltf>::value>::type
         >
         {
-            using type = typename concepts::ImplementationBase<ConceptDev, TPltf>;
+            using type = typename concepts::ImplementationType<ConceptDev, TPltf>;
         };
 
         //#############################################################################

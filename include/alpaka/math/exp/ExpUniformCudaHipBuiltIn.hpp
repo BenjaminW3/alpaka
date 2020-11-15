@@ -49,7 +49,7 @@ namespace alpaka
     {
         //#############################################################################
         //! The CUDA built in exp.
-        class ExpUniformCudaHipBuiltIn : public concepts::Implements<ConceptMathExp, ExpUniformCudaHipBuiltIn>
+        class ExpUniformCudaHipBuiltIn : public concepts::ImplementsViaBase<ConceptMathExp, ExpUniformCudaHipBuiltIn>
         {
         };
 

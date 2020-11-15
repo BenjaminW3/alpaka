@@ -23,7 +23,7 @@ namespace alpaka
 {
     //#############################################################################
     //! The block shared memory allocator allocating memory with synchronization on the master thread.
-    class BlockSharedMemStMasterSync : public concepts::Implements<ConceptBlockSharedSt, BlockSharedMemStMasterSync>
+    class BlockSharedMemStMasterSync : public concepts::ImplementsViaBase<ConceptBlockSharedSt, BlockSharedMemStMasterSync>
     {
     public:
         //-----------------------------------------------------------------------------
