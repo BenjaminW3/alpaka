@@ -18,7 +18,7 @@
 
 namespace alpaka
 {
-    //! The CPU boost aligned allocator.
+    //! The CPU aligned allocator.
     //!
     //! \tparam TAlignment An integral constant containing the alignment.
     template<typename TAlignment>
@@ -28,7 +28,7 @@ namespace alpaka
 
     namespace traits
     {
-        //! The CPU boost aligned allocator memory allocation trait specialization.
+        //! The CPU aligned allocator memory allocation trait specialization.
         template<typename T, typename TAlignment>
         struct Malloc<T, AllocCpuAligned<TAlignment>>
         {
@@ -55,7 +55,7 @@ namespace alpaka
             }
         };
 
-        //! The CPU boost aligned allocator memory free trait specialization.
+        //! The CPU aligned allocator memory free trait specialization.
         template<typename T, typename TAlignment>
         struct Free<T, AllocCpuAligned<TAlignment>>
         {

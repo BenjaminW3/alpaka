@@ -82,13 +82,10 @@
 // In boost since 1.68.0
 // nvcc CUDA compiler detection
 
-#include <boost/version.hpp>
-#if BOOST_VERSION >= 106800
-// BOOST_COMP_NVCC_EMULATED is defined by boost instead of BOOST_COMP_NVCC
-#    if defined(BOOST_COMP_NVCC) && defined(BOOST_COMP_NVCC_EMULATED)
-#        undef BOOST_COMP_NVCC
-#        define BOOST_COMP_NVCC BOOST_COMP_NVCC_EMULATED
-#    endif
+// BOOST_COMP_NVCC_EMULATED was defined by older boost versions instead of BOOST_COMP_NVCC
+#if defined(BOOST_COMP_NVCC_EMULATED)
+#    undef BOOST_COMP_NVCC
+#    define BOOST_COMP_NVCC BOOST_COMP_NVCC_EMULATED
 #endif
 
 #if !defined(BOOST_COMP_NVCC)

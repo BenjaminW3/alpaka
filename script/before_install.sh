@@ -32,10 +32,26 @@ fi
 
 #-------------------------------------------------------------------------------
 # Boost.
-ALPAKA_CI_BOOST_BRANCH_MAJOR=${ALPAKA_CI_BOOST_BRANCH:6:1}
-echo ALPAKA_CI_BOOST_BRANCH_MAJOR: "${ALPAKA_CI_BOOST_BRANCH_MAJOR}"
-ALPAKA_CI_BOOST_BRANCH_MINOR=${ALPAKA_CI_BOOST_BRANCH:8:2}
-echo ALPAKA_CI_BOOST_BRANCH_MINOR: "${ALPAKA_CI_BOOST_BRANCH_MINOR}"
+export ALPAKA_CI_INSTALL_BOOST="OFF"
+if [ ! -z "${ALPAKA_CI_BOOST_BRANCH+x}" ]
+then
+    export ALPAKA_CI_INSTALL_BOOST="ON"
+    export ALPAKA_CI_BOOST_BRANCH_MAJOR=${ALPAKA_CI_BOOST_BRANCH:6:1}
+    echo ALPAKA_CI_BOOST_BRANCH_MAJOR: "${ALPAKA_CI_BOOST_BRANCH_MAJOR}"
+    export ALPAKA_CI_BOOST_BRANCH_MINOR=${ALPAKA_CI_BOOST_BRANCH:8:2}
+    echo ALPAKA_CI_BOOST_BRANCH_MINOR: "${ALPAKA_CI_BOOST_BRANCH_MINOR}"
+
+    #-------------------------------------------------------------------------------
+    # Fibers
+    export ALPAKA_CI_INSTALL_FIBERS="OFF"
+    if [ ! -z "${ALPAKA_ACC_CPU_B_SEQ_T_FIBERS_ENABLE+x}" ]
+    then
+        if [ "${ALPAKA_ACC_CPU_B_SEQ_T_FIBERS_ENABLE}" = "ON" ]
+        then
+            export ALPAKA_CI_INSTALL_FIBERS="ON"
+        fi
+    fi
+fi
 
 #-------------------------------------------------------------------------------
 # CUDA
@@ -76,25 +92,7 @@ then
     then
         export ALPAKA_CI_INSTALL_TBB="ON"
     fi
-else
-    # If the variable is not set, the backend will most probably be used by default so we install it.
-    export ALPAKA_CI_INSTALL_TBB="ON"
 fi
-
-#-------------------------------------------------------------------------------
-# Fibers
-export ALPAKA_CI_INSTALL_FIBERS="OFF"
-if [ ! -z "${ALPAKA_ACC_CPU_B_SEQ_T_FIBERS_ENABLE+x}" ]
-then
-    if [ "${ALPAKA_ACC_CPU_B_SEQ_T_FIBERS_ENABLE}" = "ON" ]
-    then
-        export ALPAKA_CI_INSTALL_FIBERS="ON"
-    fi
-else
-    # If the variable is not set, the backend will most probably be used by default so we install it.
-    export ALPAKA_CI_INSTALL_FIBERS="ON"
-fi
-
 
 # GCC-5.5 has broken avx512vlintrin.h in Release mode with NVCC 9.X
 #   https://gcc.gnu.org/bugzilla/show_bug.cgi?id=76731
