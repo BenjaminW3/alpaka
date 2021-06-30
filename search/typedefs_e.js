@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['srcsize',['SrcSize',['../structalpaka_1_1mem_1_1view_1_1cpu_1_1detail_1_1TaskCopyCpuBase.html#a8fa28e5787731a80ba64c96b0f497b46',1,'alpaka::mem::view::cpu::detail::TaskCopyCpuBase']]]
+  ['srcsize_3863',['SrcSize',['../structalpaka_1_1detail_1_1TaskCopyCpuBase.html#ae8c102a791f735a9830b2a7dea0c9053',1,'alpaka::detail::TaskCopyCpuBase']]]
 ];

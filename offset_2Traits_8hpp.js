@@ -1,15 +1,15 @@
 var offset_2Traits_8hpp =
 [
-    [ "GetOffset", "structalpaka_1_1offset_1_1traits_1_1GetOffset.html", "structalpaka_1_1offset_1_1traits_1_1GetOffset" ],
-    [ "GetOffset< dim::DimInt< 0u >, TOffsets, std::enable_if_t< std::is_integral< TOffsets >::value > >", "structalpaka_1_1offset_1_1traits_1_1GetOffset_3_01dim_1_1DimInt_3_010u_01_4_00_01TOffsets_00_01s6ead9eabba6bed4944754637be4a0fc8.html", "structalpaka_1_1offset_1_1traits_1_1GetOffset_3_01dim_1_1DimInt_3_010u_01_4_00_01TOffsets_00_01s6ead9eabba6bed4944754637be4a0fc8" ],
-    [ "SetOffset", "structalpaka_1_1offset_1_1traits_1_1SetOffset.html", null ],
-    [ "SetOffset< dim::DimInt< 0u >, TOffsets, TOffset, std::enable_if_t< std::is_integral< TOffsets >::value > >", "structalpaka_1_1offset_1_1traits_1_1SetOffset_3_01dim_1_1DimInt_3_010u_01_4_00_01TOffsets_00_01T91bb9083fc44a32006b62ed41cdc1b25.html", "structalpaka_1_1offset_1_1traits_1_1SetOffset_3_01dim_1_1DimInt_3_010u_01_4_00_01TOffsets_00_01T91bb9083fc44a32006b62ed41cdc1b25" ],
-    [ "getOffset", "offset_2Traits_8hpp.html#a136599b44d193edcf917f4a36d8c073f", null ],
-    [ "getOffsetX", "offset_2Traits_8hpp.html#aa4dbabd33ce144b2daf3894c582b1fa0", null ],
-    [ "getOffsetY", "offset_2Traits_8hpp.html#ac610931b4adcbdc60b153f935f147aa7", null ],
-    [ "getOffsetZ", "offset_2Traits_8hpp.html#a174bbb40f6145a85e164a4e1f7b8d723", null ],
-    [ "setOffset", "offset_2Traits_8hpp.html#a40471495621b836a67aa72d9afcad1ea", null ],
-    [ "setOffsetX", "offset_2Traits_8hpp.html#a913fc1aac4832da4c17c87757c1007b3", null ],
-    [ "setOffsetY", "offset_2Traits_8hpp.html#ad0062c11c487443af3007d74624f59a7", null ],
-    [ "setOffsetZ", "offset_2Traits_8hpp.html#a6cf0f10ef93b71e42b41d56bf8767724", null ]
+    [ "GetOffset", "structalpaka_1_1traits_1_1GetOffset.html", "structalpaka_1_1traits_1_1GetOffset" ],
+    [ "GetOffset< DimInt< 0u >, TOffsets, std::enable_if_t< std::is_integral< TOffsets >::value > >", "structalpaka_1_1traits_1_1GetOffset_3_01DimInt_3_010u_01_4_00_01TOffsets_00_01std_1_1enable__if_2d59fe3343abe9a6f0eea39071c5784d.html", "structalpaka_1_1traits_1_1GetOffset_3_01DimInt_3_010u_01_4_00_01TOffsets_00_01std_1_1enable__if_2d59fe3343abe9a6f0eea39071c5784d" ],
+    [ "SetOffset", "structalpaka_1_1traits_1_1SetOffset.html", null ],
+    [ "SetOffset< DimInt< 0u >, TOffsets, TOffset, std::enable_if_t< std::is_integral< TOffsets >::value > >", "structalpaka_1_1traits_1_1SetOffset_3_01DimInt_3_010u_01_4_00_01TOffsets_00_01TOffset_00_01std_1df6c00c02b15d4449f1d0f40e00c2891.html", "structalpaka_1_1traits_1_1SetOffset_3_01DimInt_3_010u_01_4_00_01TOffsets_00_01TOffset_00_01std_1df6c00c02b15d4449f1d0f40e00c2891" ],
+    [ "getOffset", "offset_2Traits_8hpp.html#a4ab29380ee728427c2c29fcefccfcce4", null ],
+    [ "getOffsetX", "offset_2Traits_8hpp.html#a3edd539f49247b1802f567aa6c88b47e", null ],
+    [ "getOffsetY", "offset_2Traits_8hpp.html#aa9094d40cfed2a7f9d3814132da9191b", null ],
+    [ "getOffsetZ", "offset_2Traits_8hpp.html#a3f52e0b422b1c94d37ce259fc671ad8e", null ],
+    [ "setOffset", "offset_2Traits_8hpp.html#a42ad0da49e9edcf34619f6a61505373e", null ],
+    [ "setOffsetX", "offset_2Traits_8hpp.html#a48ccf4bbc8805a239f9296f4ed995598", null ],
+    [ "setOffsetY", "offset_2Traits_8hpp.html#ae988c26c08c6d6f9a6df5b9e1b96d493", null ],
+    [ "setOffsetZ", "offset_2Traits_8hpp.html#a60a51cbc574fd2141b8716abe68e5ec0", null ]
 ];
